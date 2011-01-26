@@ -1,0 +1,27 @@
+## assingment ###############################################################
+(The Account class) Design a class named Account that contains:
+- an int data field named id for the account (default 0).
+- a double data field named balance for the account (default 0).
+- a double data field named annualInterestRate that stores the current
+  interest rate (default 0).
+- a Date field named dateCreated storing date when account created
+- no-arg constructor creating account
+- accessor/mutator methods for id, balance, annualInterestRate.
+- accessor method for dateCreated
+- a method named getMonthlyInterestRate() that returns monthly interest rate
+- method named withDraw that withdraws a specified amount from the account.
+- a method named deposit that desposits a specified amount to the account
+
+Draw a UML diagram for the class. Implement the class. Write a test program
+that creates an Account object with an account ID 1122, a balance of 20000, an
+interest rate of 4.5%. Use the withDraw method to withdraw $2500, use the
+deposit method to deposit $3000, and print the balance, monthly int rate, and
+date account created
+
+
+#############################################################################
+
+UML:
+
+Account
+
