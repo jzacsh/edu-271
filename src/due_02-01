@@ -1,0 +1,9 @@
+# uml for a class of any kind
+
+-
++---------------------------+
+| Feline                    |
+| - (property) kitten       |
+| - (property) color        |
+| - (method) generate       |
++---------------------------+
