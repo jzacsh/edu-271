@@ -50,7 +50,7 @@ class Circle {
     }
 
     public String toString() {
-        return "Circle's rad is: "+ this.radius + "\n\tArea is: "+ this.findArea() + "\n";
+        return "Circle's rad is: "+ this.radius + "\n\tCircle's Area is: "+ this.findArea() + "\n";
     }
 
     public static void main(String[] args) {
