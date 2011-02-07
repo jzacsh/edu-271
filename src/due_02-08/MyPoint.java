@@ -4,11 +4,12 @@ import java.io.*;
 /**
  * A simple testing class for the MyPoint class.
  */
-public class TestMyPoint {
+class TestMyPoint {
     MyPoint pointy = new MyPoint();
     double cx = pointy.getCoordinate(0);
     double cy = pointy.getCoordinate(1);
-    System.out.printf("(x,y)\n(%d,%d)\n", cx, cy);
+//  System.out.println("(x,y) = ("+cx+","+cy+")");
+//  System.out.printf("(x,y) = (%f,%f)\n", cx, cy);
 }
 
 /**
@@ -62,7 +63,7 @@ public class MyPoint {
      * @return  double  the x or y -coordinate requested for the object.
      */
     public double getCoordinate(short coord) {
-        if (coord) {
+        if (coord > 0) {
             return this.coordY;
         }
         else {
