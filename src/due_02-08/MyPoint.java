@@ -5,11 +5,13 @@ import java.io.*;
  * A simple testing class for the MyPoint class.
  */
 class TestMyPoint {
-    MyPoint pointy = new MyPoint();
-    double cx = pointy.getCoordinate(0);
-    double cy = pointy.getCoordinate(1);
-//  System.out.println("(x,y) = ("+cx+","+cy+")");
-//  System.out.printf("(x,y) = (%f,%f)\n", cx, cy);
+    public static void main(String[] args) {
+        MyPoint pointy = new MyPoint();
+        double cx = pointy.getCoordinate(0);
+        double cy = pointy.getCoordinate(1);
+    //  System.out.println("(x,y) = ("+cx+","+cy+")");
+        System.out.printf("(x,y) = (%f,%f)\n", cx, cy);
+    }
 }
 
 /**
@@ -59,10 +61,10 @@ public class MyPoint {
     /**
      * Accessor method.
      *
-     * @param  short  coordinate requested, 0 for the first, 1 for the second. (X,Y)
+     * @param   int  coordinate requested, 0 for the first, 1 for the second. (X,Y)
      * @return  double  the x or y -coordinate requested for the object.
      */
-    public double getCoordinate(short coord) {
+    public double getCoordinate(int coord) {
         if (coord > 0) {
             return this.coordY;
         }
@@ -90,7 +92,26 @@ public class MyPoint {
 //  }
 
 
-    public static void main() {
-        //
+    //
+    //@TODO: why do my tests only run here? why not in the TestClass I created?
+    //
+    public static void main(String[] args) {
+        double x = 4;
+        double y = 39.3;
+
+        if (args.length == 2) {
+            try {
+                x = Double.parseDouble(args[0]);
+                y = Double.parseDouble(args[1]);
+            }
+            catch (Exception e) {
+                System.out.printf("Java has no `pass` keyword?\n");
+            }
+        }
+
+        MyPoint pointy = new MyPoint(x,y);
+        double cx = pointy.getCoordinate(0);
+        double cy = pointy.getCoordinate(1);
+        System.out.printf("(x,y) = (%.2f,%.2f)\n", cx, cy);
     }
 }
