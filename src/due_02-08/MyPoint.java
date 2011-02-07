@@ -103,6 +103,7 @@ public class MyPoint {
         //@TODO: calculations between this.getCoordinate() and
         //otherPoint.getCoordinate()
 
+        return 0;
     }
 
     /**
@@ -130,7 +131,7 @@ public class MyPoint {
                 y = Double.parseDouble(args[1]);
             }
             catch (Exception e) {
-                System.out.printf("Java has no `pass` keyword?\n");
+                System.err.printf("Java has no `pass` keyword?\n");
             }
         }
 
