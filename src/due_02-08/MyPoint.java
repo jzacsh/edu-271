@@ -74,6 +74,8 @@ public class MyPoint {
         }
     }
 
+    //@TODO: Professor, can I remove these lines?
+
     /**
      * The silly way to do accessors:
      */
@@ -91,6 +93,29 @@ public class MyPoint {
 //      return this.coordY;
 //  }
 
+    /**
+     * Default distance calculation between this object and another.
+     *
+     * @param  MyPoint  another object of the MyPoint class.
+     * @return  double  the distance between this object and the one passed.
+     */
+    public double distance(MyPoint otherPoint) {
+        //@TODO: calculations between this.getCoordinate() and
+        //otherPoint.getCoordinate()
+
+    }
+
+    /**
+     * Distance calculation between this object and another arbitrary point.
+     *
+     * @param  double  the x-plain coordinate of the other object
+     * @param  double  the y-plain coordinate of the other object
+     * @return  double  the distance between this object and the one passed.
+     */
+    public double distance(double x, double y) {
+        MyPoint other = new MyPoint(x, y);
+        return distance(other);
+    }
 
     //
     //@TODO: why do my tests only run here? why not in the TestClass I created?
