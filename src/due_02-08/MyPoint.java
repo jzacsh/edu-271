@@ -1,3 +1,4 @@
+import java.lang.Math;
 import java.util.Scanner;
 import java.io.*;
 
@@ -100,10 +101,10 @@ public class MyPoint {
      * @return  double  the distance between this object and the one passed.
      */
     public double distance(MyPoint otherPoint) {
-        //@TODO: calculations between this.getCoordinate() and
-        //otherPoint.getCoordinate()
+        double[] one = this.getCoordinate();
+        double[] two = otherPoint.getCoordinate();
 
-        return 0;
+        return Math.sqrt(Math.pow(2, (one[0] - two[0])) + Math.pow(2, (one[1] - two[1])));
     }
 
     /**
@@ -115,7 +116,7 @@ public class MyPoint {
      */
     public double distance(double x, double y) {
         MyPoint other = new MyPoint(x, y);
-        return distance(other);
+        return this.distance(other);
     }
 
     //
@@ -123,7 +124,7 @@ public class MyPoint {
     //
     public static void main(String[] args) {
         double x = 4;
-        double y = 39.3;
+        double y = 39;
 
         if (args.length == 2) {
             try {
@@ -139,5 +140,10 @@ public class MyPoint {
         double cx = pointy.getCoordinate(0);
         double cy = pointy.getCoordinate(1);
         System.out.printf("(x,y) = (%.2f,%.2f)\n", cx, cy);
+        double otherX = 71;
+        double otherY = 39;
+        System.out.printf("Distance between above and coords at (%.2f,%.2f) is:\n%.2f\n",
+                otherX, otherY, pointy.distance(otherX, otherY)
+            );
     }
 }
