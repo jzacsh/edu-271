@@ -12,5 +12,5 @@ x A method named distance that returns the distance from this point to another
   point with specified x and y coordinates.
 
 x Draw the UML diagram for the class.
-- Implement the class. Write a test program that creates two points (0,0) and
+x Implement the class. Write a test program that creates two points (0,0) and
   (10, 30.5) and displays the distance between them.

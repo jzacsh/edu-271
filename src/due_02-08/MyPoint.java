@@ -139,8 +139,8 @@ public class MyPoint {
     //@TODO: why do my tests only run here? why not in the TestClass I created?
     //
     public static void main(String[] args) {
-        double x = 4;
-        double y = 39;
+        double x = 0;
+        double y = 0;
 
         if (args.length == 2) {
             try {
@@ -156,8 +156,8 @@ public class MyPoint {
         double cx = pointy.getCoordinate(0);
         double cy = pointy.getCoordinate(1);
         System.out.printf("(x,y) = (%.2f,%.2f)\n", cx, cy);
-        double otherX = 71;
-        double otherY = 39;
+        double otherX = 10;
+        double otherY = 35;
         System.out.printf("Distance between above and coords at (%.2f,%.2f) is: %.2f\n",
                 otherX, otherY, pointy.distance(otherX, otherY)
             );

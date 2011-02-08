@@ -1,0 +1,3 @@
+$ javac MyPoint.java && java MyPoint > ./MyPoint.out
+(x,y) = (0.00,0.00)
+Distance between above and coords at (10.00,35.00) is: 36.40
