@@ -11,7 +11,7 @@ class TestMyPoint {
         double cx = pointy.getCoordinate(0);
         double cy = pointy.getCoordinate(1);
     //  System.out.println("(x,y) = ("+cx+","+cy+")");
-        System.out.printf("(x,y) = (%f,%f)\n", cx, cy);
+        System.out.printf("(x, y) = (%f, %f)\n", cx, cy);
     }
 }
 
@@ -155,10 +155,10 @@ public class MyPoint {
         MyPoint pointy = new MyPoint(x,y);
         double cx = pointy.getCoordinate(0);
         double cy = pointy.getCoordinate(1);
-        System.out.printf("(x,y) = (%.2f,%.2f)\n", cx, cy);
+        System.out.printf("(x, y) = (%.2f, %.2f)\n", cx, cy);
         double otherX = 10;
         double otherY = 35;
-        System.out.printf("Distance between above and coords at (%.2f,%.2f) is: %.2f\n",
+        System.out.printf("Distance between above and coords at (%.2f, %.2f) is: %.2f\n",
                 otherX, otherY, pointy.distance(otherX, otherY)
             );
     }
