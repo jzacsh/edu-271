@@ -104,7 +104,10 @@ public class MyPoint {
         double[] one = this.getCoordinate();
         double[] two = otherPoint.getCoordinate();
 
-        return Math.sqrt(Math.pow(2, (one[0] - two[0])) + Math.pow(2, (one[1] - two[1])));
+        double deltaX = one[0] - two[0];
+        double deltaY = one[1] - two[1];
+
+        return Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
     }
 
     /**
@@ -142,7 +145,7 @@ public class MyPoint {
         System.out.printf("(x,y) = (%.2f,%.2f)\n", cx, cy);
         double otherX = 71;
         double otherY = 39;
-        System.out.printf("Distance between above and coords at (%.2f,%.2f) is:\n%.2f\n",
+        System.out.printf("Distance between above and coords at (%.2f,%.2f) is: %.2f\n",
                 otherX, otherY, pointy.distance(otherX, otherY)
             );
     }
