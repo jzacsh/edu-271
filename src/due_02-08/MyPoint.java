@@ -17,6 +17,19 @@ class TestMyPoint {
 
 /**
  * A class to handle (x,y) coordinate calculations.
+ *
+ * UML:
+ * +----------------------------------------------+
+ * | MyPoint                                      |
+ * |                                              |
+ * |   - members:                                 |
+ * |     - x coordinate                           |
+ * |     - y coordinate                           |
+ * |   - methods:                                 |
+ * |     - getCoordinate()                        |
+ * |     - distance()                             |
+ * +----------------------------------------------+
+ *
  */
 public class MyPoint {
     //
