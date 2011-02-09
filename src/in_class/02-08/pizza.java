@@ -11,6 +11,22 @@ public class pizza {
         LargePizza lg  = new LargePizza();
 
         System.out.printf("%s", sm.getOrder());
+
+        //test interfaces:
+        LargePizza another = new LargePizza();
+        if (lg.compareTo(another) == 0) {
+            System.out.println("Two larges are the same.");
+        }
+        else {
+            System.out.println("Two larges are the different.");
+        }
+
+        if (lg.compareTo(sm) == 0) {
+            System.out.println("Small and Large are the same.");
+        }
+        else {
+            System.out.println("Small and Large are different.");
+        }
     }
 }
 
@@ -47,7 +63,7 @@ class LargePizza extends PizzaBase {
     }
 }
 
-abstract class PizzaBase {
+abstract class PizzaBase implements Comparable {
     //data members
     protected String toppings;
     protected String size;
@@ -61,6 +77,24 @@ abstract class PizzaBase {
         this.cost = cost;
         this.toppings = "cheese";
         timeOrdered = new Date();
+    }
+
+    //implementation
+    public int compareTo(Object obj) {
+        //spec for compareTo returns:
+        int same = 0;
+        int greater = 1;
+        int less = -1;
+        if (obj instanceof PizzaBase ) {
+            PizzaBase otherPizza = (PizzaBase) obj; //convenience
+            if (this.size.equals(otherPizza.size)) {
+                if (cost == otherPizza.cost) {
+                    return same;
+                }
+            }
+        }
+
+        return greater; //not necessarily, but we don't care for this example
     }
 
     public String getOrder() {
