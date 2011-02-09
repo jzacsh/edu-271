@@ -85,7 +85,7 @@ abstract class PizzaBase implements Comparable {
         int same = 0;
         int greater = 1;
         int less = -1;
-        if (obj instanceof PizzaBase ) {
+        if (obj instanceof PizzaBase) {
             PizzaBase otherPizza = (PizzaBase) obj; //convenience
             if (this.size.equals(otherPizza.size)) {
                 if (cost == otherPizza.cost) {
