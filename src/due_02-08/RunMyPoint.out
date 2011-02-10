@@ -1,0 +1,7 @@
+$ javac RunMyPoint.java && java RunMyPoint
+(x, y) = (0.00, 0.00)
+Distance between above and coords at (10.00, 35.00) is: 36.40
+
+$ javac RunMyPoint.java && java RunMyPoint 39 28
+(x, y) = (39.00, 28.00)
+Distance between above and coords at (10.00, 35.00) is: 29.83
