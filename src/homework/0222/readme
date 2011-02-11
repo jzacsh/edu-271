@@ -1,0 +1,23 @@
+lab 4
+pg 369; #10.5 #10.9
+
+
+10.5
+(Enabling Circle comparable) Rewrite the Circle class in Listing 9.2 to extend
+GeometricObject nad implement the Comparable interface. Override the equals
+and hashCode methods in the Object class. Two Circle objects are equal if
+their radii are the same. Draw the UML diagram that involves Circle,
+GeometricObject, and Comparable.
+
+
+10.9
+(Finding the largest object) Write a method that returns the largest object in
+an array of objects. The method signature is:
+    public static Object max(Object[] a)
+
+All the objects are instances of the Comparable interface. The order of the
+objects in the arra yis determined using the compareTo method.
+
+Write a test program that creats an array of ten strings, and array of ten
+integers, an array of ten dates, and finds the largest string, integer, and
+date in the arrays.
