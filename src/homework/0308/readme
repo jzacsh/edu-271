@@ -1,0 +1,22 @@
+lab 6
+pg 488; #14.3
+
+(Finding which button has been clicked on a panel) Write a program that creates
+a user interface with two buttons named "OK" and "Cancel" and a message panel
+for displaying message. When you click the OK button, a mesage "The OK button
+hsa been clicked" is displayed. When you click the Cancel button, a message
+"The Cancel button has been clicked" is displayed, as shown in Figure 14.19.
+
+
+Figure 14.19.
+Exercise 14.3 displays which button isclicked on a message panel.
+
+    +----------------------------------+
+    | + Exercise14_3             _ O X |
+    |----------------------------------|
+    |                                  |
+    | The OK button has been clicked.  |
+    |                                  |
+    |         [OK]  [Cancel]           |
+    |                                  |
+    +----------------------------------+
