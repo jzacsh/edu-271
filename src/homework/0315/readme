@@ -1,0 +1,24 @@
+lab 7
+pg 527; #15.5
+
+(Creating a miles/kilometers converter) Write a program that converts miles
+and kilometers, as shown in Figure 15.37. If you enter a value in the Mile
+text field and press the Enter key, the corresponding kilometer is displayed
+in the Kilometer text field. Likewise, if you enter a value in hte Kilometer
+text field and press the Enter key, the corresponding mile is displayed in the
+Mile text field.
+
+
+Figure 15.37  The program converts miles to kilometers, and vice versa.
+
+        +-------------------------+
+        |+ Exercise15_3           |
+        |-------------------------|
+        |Mile      |       0.6241 | <-- [2]
+[1] --> |          |--------------|    
+        |Kilometer |            1 | <-- [3]
+        +-------------------------+
+
+    [1] Panel with GridLayout for two labels.
+    [2] Panel with BorderLayout
+    [3] Panel with GridLayout for two text fields.
