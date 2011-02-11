@@ -20,11 +20,20 @@ Figure 12.16
 
 
 12.2
+(Using the BorderLayout manager) Rewrite the preceding program to create the
+same user interface, but instead of using FlowLayout fo the frame, use
+BorderLayout. Place one panel in the south of the frame and the other panel in
+the center.
 
 
 12.3
+(Using the GridLayout manager) Rewrite the preceding program to create the
+same user interface. Instead of using FlowLayout for the panels, use a
+GridLayout of two rows and three columns.
 
 
 12.4
-
-
+(Using JPanel to group buttons) Rewrite the preceding program to create the
+same user interface. Instead of creating buttons and panels separately, define
+a class that extends the JPanel class. Place three buttons in your panel
+class, and create two panels from the user-defined panel class.
