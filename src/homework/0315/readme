@@ -12,7 +12,7 @@ Mile text field.
 Figure 15.37  The program converts miles to kilometers, and vice versa.
 
         +----------------------------+
-        | + Exercise15_3       _ O X |
+        | + Exercise15_5       _ O X |
         |----------------------------|
         | Mile      |         0.6241 | <-- [2]
 [1] --> |           |----------------|
