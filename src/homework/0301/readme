@@ -1,0 +1,30 @@
+lab 5
+pg 423; #12.1, #12.2, #12.3, #12.4
+
+12.1
+(using the FlowLayout manager) Write a program tha tmeets the following
+requirements (see 12.16):
+- Create a frame and set its layout to FlowLayout
+- Create two panels and add them to the frame.
+- Each panel contains three buttons. The panel uses FlowLayout.
+
+
+Figure 12.16
+    +----------------------------------------------------------------------+
+    | + Exercise12_1                                                _ O X  |
+    |----------------------------------------------------------------------|
+    |                                                                      |
+    | |button 1| |button 2| |button 3|    |button 4| |button 5| |button 6| |
+    |                                                                      |
+    +----------------------------------------------------------------------+
+
+
+12.2
+
+
+12.3
+
+
+12.4
+
+
