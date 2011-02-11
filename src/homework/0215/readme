@@ -1,0 +1,37 @@
+lab 3
+pg 338; 9.1, 9.3
+
+
+9.1:
+(the triangle class) Design a class named Triangle that extends
+GeometricObject. The class contains:
+- Three double data fields named side1, side2, side3 with default values 1.0
+  to denotes three sides of a tringle
+- A no-arg constructor that creates a default tringle.
+- A constructor that creates a rectangle with the specified side1, side2, and
+  side3
+- The accessor methods for all three data fields.
+- A method named getArea() that returns the area of this triangle.
+- A method named getParimeter() that returns the perimeter of this triangle.
+- A method named toString() that returns a string description for the triangle.
+
+For the formula to compute the area of a triangle, see Exercise 5.19. The
+toString() method is implemented as follows:
+    return "Triangle: side1 = " + side1 + " sid2 = " + side2 + " side3 = " + side3;
+
+Draw the UML diagram that involves the classes Triangle and GeometricObject.
+Implement the class. Write a test program that creates a Triangle object with
+sides 1, 1.5, 1, sets color 'yellow' and filled 'true', and displays the area,
+perimeter, color, and whether filled or not.
+
+
+9.3
+(Subclasses of Account) In Exercise 7.3, the Account class was created to
+model a bank account. An account has the properties account number, balance,
+annual interest rate, and date created, and methods to deposit and withdraw.
+Create two subclasses for checking and saving accounts. A checking account has
+an overdraft limit, but a savings account cannot be overdrawn.
+
+Draw the UML diagram for the classes. Implement the classes. Write a test
+program that creates objects of Account, SavingsAccount, and CheckingAccount,
+and invokes their toString() methods.
