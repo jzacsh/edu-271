@@ -66,10 +66,9 @@ public class Triangle extends GeometricObject {
      * @return double area of the triangle.
      */
     public double getArea() {
-        //@TODO: calculate the height of the triangle:
-        double height = NULL;
-
-        return 0.5 * this.side1 * height;
+        //formula taken from: Prog-Exercise 5.19, ISBN 0-13-222158-6;
+        double s = (this.side1 + this.side2 + this.side3) / 2
+        return Math.sqrt(s * (s - this.side1) * (s - this.side2) * (s - this.side3));
     }
 
     /**

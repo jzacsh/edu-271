@@ -15,7 +15,7 @@ GeometricObject. The class contains:
 - A method named getParimeter() that returns the perimeter of this triangle.
 - A method named toString() that returns a string description for the triangle.
 
-For the formula to compute the area of a triangle, see Exercise 5.19. The
+For the formula to compute the area of a triangle, see Exercise 5.19[1].The
 toString() method is implemented as follows:
     return "Triangle: side1 = " + side1 + " sid2 = " + side2 + " side3 = " + side3;
 
@@ -23,6 +23,10 @@ Draw the UML diagram that involves the classes Triangle and GeometricObject.
 Implement the class. Write a test program that creates a Triangle object with
 sides 1, 1.5, 1, sets color 'yellow' and filled 'true', and displays the area,
 perimeter, color, and whether filled or not.
+
+[1] Area of a Triangle:
+ s = (sid1 + side2 + side3)/2
+ area = sqrt( s(s - side1)(s - side2)(s - side3) )
 
 
 9.3
