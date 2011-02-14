@@ -1,3 +1,37 @@
+//@TODO: because I placed a "package" statement of `chapter9` in
+//GeometricObject.java file, do I have to do the same here? or does it not
+//matter, because this is only _utilizing_ the package?
+
+//@TODO: if I want my `TestClass` files to be able to 'import' from this file,
+//I need to have a `package` statement here, correct?
+
+/**
+ * UML Diagram of Triangle and GeometricObject
+ *
+ * +-----------------------------------------+
+ * | [m] = method                            |
+ * | [p] = property/field                    |
+ * |-----------------------------------------|
+ * | GeometricObject                         |
+ * | + m  getColor                           |
+ * | + m  setColor                           |
+ * | + m  isFilled                           |
+ * | + m  getFilled                          |
+ * | + m  getDateCreated                     |
+ * | + m  toString                           |
+ * | + p  color                              |
+ * | + p  filled                             |
+ * | + p  dateCreated                        |
+ * |                                         |
+ * | Triangle (extends GeometricObject)      |
+ * | + p  side1                              |
+ * | + p  side2                              |
+ * | + p  side3                              |
+ * | + m  getSide                            |
+ * | + m  getArea                            |
+ * | + m  getPerimeter                       |
+ * +-----------------------------------------+
+ */
 
 public class Triangle extends GeometricObject {
     public double side1, side2, side3;
@@ -15,15 +49,19 @@ public class Triangle extends GeometricObject {
     /**
      * Constructor.
      *
+     * @param: String color of the object.
+     * @param: boolean if the object is filled.
      * @param: double side 1 of this triangle.
      * @param: double side 2 of this triangle.
      * @param: double side 3 of this triangle.
      */
-    public Triangle() {
+    public Triangle(String color, boolean fill, double s1, double s2, double s3) {
         super(); //usually done implicitly
-        this.side1 = side1;
-        this.side2 = side2;
-        this.side3 = side3;
+        this.setColor(color);
+        this.setFilled(fill);
+        this.side1 = s1;
+        this.side2 = s2;
+        this.side3 = s3;
     }
 
     /**
