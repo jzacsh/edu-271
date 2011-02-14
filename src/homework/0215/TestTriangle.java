@@ -1,5 +1,5 @@
 import chapter9.*;
-import pkg.*;
+import home.jzacsh.docs.edu.*;//.271.src.pkg.*;
 //@TODO: is the above how it is done?
 
 public class TestTriangle {
