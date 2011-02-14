@@ -1,4 +1,6 @@
 import chapter9.*;
+import pkg.*;
+//@TODO: is the above how it is done?
 
 public class TestTriangle {
     public void main(String args[]) {
