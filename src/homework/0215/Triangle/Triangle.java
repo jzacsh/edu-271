@@ -105,7 +105,7 @@ public class Triangle extends GeometricObject {
      */
     public double getArea() {
         //formula taken from: Prog-Exercise 5.19, ISBN 0-13-222158-6;
-        double s = (this.side1 + this.side2 + this.side3) / 2
+        double s = (this.side1 + this.side2 + this.side3) / 2;
         return Math.sqrt(s * (s - this.side1) * (s - this.side2) * (s - this.side3));
     }
 

@@ -1,6 +1,5 @@
-import chapter9.*;
-import home.jzacsh.docs.edu.*;//.271.src.pkg.*;
-//@TODO: is the above how it is done?
+package var.com.edu.comp271;
+import var.com.edu.comp271.Triangle;
 
 public class TestTriangle {
     public void main(String args[]) {
