@@ -31,11 +31,16 @@ perimeter, color, and whether filled or not.
 
 9.3
 (Subclasses of Account) In Exercise 7.3, the Account class was created to
-model a bank account. An account has the properties account number, balance,
-annual interest rate, and date created, and methods to deposit and withdraw.
-Create two subclasses for checking and saving accounts. A checking account has
-an overdraft limit, but a savings account cannot be overdrawn.
+model a bank account. An account has the properties:
+- account number
+- balance,
+- annual interest rate
+- and date created
+- and methods to deposit and withdraw.
+Create two subclasses for checking and saving accounts. A checking account has:
+- an overdraft limit
+- but a savings account cannot be overdrawn.
 
 Draw the UML diagram for the classes. Implement the classes. Write a test
-program that creates objects of Account, SavingsAccount, and CheckingAccount,
+program that creates objects of Account, SavingAccount, and CheckingAccount,
 and invokes their toString() methods.
