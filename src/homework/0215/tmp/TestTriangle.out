@@ -1,0 +1,6 @@
+$ javac TestTriangle.java && java TestTriangle
+Triangle. created on Tue Feb 15 18:19:57 EST 2011
+color: yellow and filled: true
+Side 1: 1.0
+Side 2: 1.5
+Side 3: 1.0
