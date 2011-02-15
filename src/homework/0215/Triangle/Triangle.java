@@ -1,3 +1,6 @@
+package var.com.edu.comp271;
+import var.com.edu.comp271.GeometricObject;
+
 //@TODO: because I placed a "package" statement of `chapter9` in
 //GeometricObject.java file, do I have to do the same here? or does it not
 //matter, because this is only _utilizing_ the package?
