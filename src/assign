@@ -34,14 +34,16 @@ x Lab2: pg258, #7.11
 DUE 02-15
 - Lab 3
     professor notes:
-    Triangle
-    extend geometricObject
-    sides
-    skip the getArea method
-    need:
-    - getPerimeter
-    - toString
-    Account
+  x Triangle
+        extend geometricObject
+        sides
+        skip the getArea method
+        need:
+        x getPerimeter
+        x toString
+  - Account
     - CheckingAccount: has overdraft limit
     - SavingsAccount: cannot be withdrawn
 
+DUE 02-22
+- Lab4
