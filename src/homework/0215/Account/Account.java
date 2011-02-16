@@ -1,6 +1,6 @@
 
 /**
- * UML Diagram of Triangle and GeometricObject
+ * UML Diagram of Account and Saving/Checking
  *
  * +-----------------------------------------+
  * | [m] = method                            |
@@ -20,7 +20,9 @@
  * |                                         |
  * | SavingAccount                           |
  * | + m  withdraw                           |
- * |   -  (override for overdraft 'throw')   |
+ * |      (override for overdraft 'throw')   |
  * +-----------------------------------------+
  */
 
+public abstract class Account {
+}
