@@ -37,7 +37,7 @@ public abstract class Account implements Throwable {
         this.dateCreated = new java.util.Date();
         //making sure to have a unique id: Rather than just Math.random we're
         //running an MD5 hash of the dateCreated and a random number.
-        String dateStamp = (String) this.dateCreated + (String) Math.random;
+        String dateStamp = (String) this.dateCreated + (String) java.lang.Math.random;
         java.security.MessageDigest md5 = new java.security.MessageDigest.getInstance("MD5");
         this.id = (String) md5.digest(dateStamp.getBytes("UTF-8"));
     }
@@ -98,7 +98,9 @@ remove this line */
     public void withdraw(double w) throws Error {
         double proposedBalance = this.balance - w;
         if (proposedBalance < 0) {
-            throw Error("Withdrawal amount exceeds account balance of %d. Amount not withdrawn.", this.balance);
+            java.util.Formatter str = new java.util.Formatter();
+            str.format("Withdrawal amount exceeds account balance of %d. Amount not withdrawn.", this.balance);
+            throw new Error(str.toString());
         }
         else {
             this.balance = this.balance - w;
