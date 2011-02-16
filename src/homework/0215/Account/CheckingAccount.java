@@ -27,6 +27,9 @@ public class CheckingAccount extends Account.java implements throwable {
         if (proposedBalance < 0 && java.lang.Math.abs(proposedBalance) > this.overDraftLimit) {
             throw Error("Over-draft Limit, %d, exceeded. Amount not withdrawn.", this.overDraftLimit);
         }
+        else {
+            super.withdraw(amt);
+        }
     }
 
     /**

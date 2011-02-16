@@ -24,7 +24,7 @@
  * +-----------------------------------------+
  */
 
-public abstract class Account {
+public abstract class Account implements Throwable {
     protected String id;
     protected double balance;
     protected double annIntRate;
@@ -95,7 +95,13 @@ remove this line */
      *
      * @param double amount to be withdrawn.
      */
-    public void withdraw(double w) {
-        this.balance = this.balance - w;
+    public void withdraw(double w) throws Error {
+        double proposedBalance = this.balance - w;
+        if (proposedBalance < 0) {
+            throw Error("Withdrawal amount exceeds account balance of %d. Amount not withdrawn.", this.balance);
+        }
+        else {
+            this.balance = this.balance - w;
+        }
     }
 }
