@@ -1,4 +1,4 @@
-public class CheckingAccount extends Account.java implements throwable {
+public class CheckingAccount extends Account {
     protected double overDraftLimit;
 
     //default constructor
@@ -25,7 +25,8 @@ public class CheckingAccount extends Account.java implements throwable {
     public void withdraw(double amt) throws Error {
         double proposedBalance = this.balance - amt;
         if (proposedBalance < 0 && java.lang.Math.abs(proposedBalance) > this.overDraftLimit) {
-            throw Error("Over-draft Limit, %d, exceeded. Amount not withdrawn.", this.overDraftLimit);
+            //@TODO: pull this out to a seperate formatted string.
+            throw new Throwable.Error("Over-draft Limit, %d, exceeded. Amount not withdrawn.", this.overDraftLimit);
         }
         else {
             super.withdraw(amt);
