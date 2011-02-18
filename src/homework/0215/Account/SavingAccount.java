@@ -11,11 +11,9 @@ public class SavingAccount extends CheckingAccount {
      * @see this.setOverDraftLimit
      * @param double starting balance for this account.
      * @param double annual interest rate for this account.
-     * @param double lower limit allowed for 'balance' property.
      */
-    public SavingAccount(double bal, double annIntRate, double limit) {
-        super(bal, annIntRate, limit);
-        this();
+    public SavingAccount(double bal, double annIntRate) {
+        super(bal, annIntRate, 0);
     }
 
 
