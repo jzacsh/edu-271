@@ -25,8 +25,9 @@ public class CheckingAccount extends Account {
     public void withdraw(double amt) throws Error {
         double proposedBalance = this.balance - amt;
         if (proposedBalance < 0 && java.lang.Math.abs(proposedBalance) > this.overDraftLimit) {
-            //@TODO: pull this out to a seperate formatted string.
-            throw new Throwable.Error("Over-draft Limit, %d, exceeded. Amount not withdrawn.", this.overDraftLimit);
+            java.util.Formatter str = new java.util.Formatter();
+            str.format("Over-draft Limit, %d, exceeded. Amount not withdrawn.", this.overDraftLimit);
+            throw new Error(str.toString());
         }
         else {
             super.withdraw(amt);
