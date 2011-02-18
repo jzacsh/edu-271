@@ -24,7 +24,7 @@
  * +-----------------------------------------+
  */
 
-public abstract class Account implements Throwable {
+public abstract class Account {
     protected String id;
     protected double balance;
     protected double annIntRate;
@@ -37,7 +37,7 @@ public abstract class Account implements Throwable {
         this.dateCreated = new java.util.Date();
         //making sure to have a unique id: Rather than just Math.random we're
         //running an MD5 hash of the dateCreated and a random number.
-        String dateStamp = (String) this.dateCreated + (String) java.lang.Math.random;
+        String dateStamp = this.dateCreated.toString() + Double.toString(java.lang.Math.random());
         java.security.MessageDigest md5 = new java.security.MessageDigest.getInstance("MD5");
         this.id = (String) md5.digest(dateStamp.getBytes("UTF-8"));
     }
