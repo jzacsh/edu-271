@@ -25,6 +25,7 @@
  */
 
 public abstract class Account {
+    private static final String hashAlgorithm = "MD5";
     protected String id;
     protected double balance;
     protected double annIntRate;
@@ -38,12 +39,18 @@ public abstract class Account {
         //making sure to have a unique id: Rather than just Math.random we're
         //running an MD5 hash of the dateCreated and a random number.
         String dateStamp = this.dateCreated.toString() + Double.toString(java.lang.Math.random());
-        java.security.MessageDigest md5 = java.security.MessageDigest.getInstance("MD5");
-        md5.reset();
-        md5.update(dateStamp.getBytes("UTF-8"));
-        byte[] hash = md5.digest();
-        this.id = hash.toString();
-//      this.id = Byte.toString(md5.digest());
+        try {
+            java.security.MessageDigest enc = java.security.MessageDigest.getInstance(hashAlgorithm);
+            enc.reset();
+            enc.update(dateStamp.getBytes("UTF-8"));
+            byte[] hash = enc.digest();
+            this.id = hash.toString();
+        }
+        catch (Exception nsae) {
+//      catch (java.security.NoSuchAlgorithmException nsae) {
+//          System.err.printf("%s algorithm not found on this hardware, ", hashAlgorithm);
+            System.err.printf("%s algorithm could not properly digest, ", hashAlgorithm);
+        }
     }
 
     /**
