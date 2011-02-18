@@ -91,7 +91,7 @@ remove this line */
      * @param double amount to be deposited.
      */
     public void deposit(double d) {
-        this.balance = this.balance + w;
+        this.balance = this.balance + d;
     }
 
     /**
