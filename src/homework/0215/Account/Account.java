@@ -38,8 +38,12 @@ public abstract class Account {
         //making sure to have a unique id: Rather than just Math.random we're
         //running an MD5 hash of the dateCreated and a random number.
         String dateStamp = this.dateCreated.toString() + Double.toString(java.lang.Math.random());
-        java.security.MessageDigest md5 = new java.security.MessageDigest.getInstance("MD5");
-        this.id = (String) md5.digest(dateStamp.getBytes("UTF-8"));
+        java.security.MessageDigest md5 = java.security.MessageDigest.getInstance("MD5");
+        md5.reset();
+        md5.update(dateStamp.getBytes("UTF-8"));
+        byte[] hash = md5.digest();
+        this.id = hash.toString();
+//      this.id = Byte.toString(md5.digest());
     }
 
     /**
@@ -51,7 +55,7 @@ public abstract class Account {
      */
     public Account(double bal, double annIntRate) {
         this(); //dateCreated and 'id' taken care of here.
-        this.setBalance = bal;
+        this.balance = bal;
         this.annIntRate = annIntRate;
     }
 
