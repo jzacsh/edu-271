@@ -65,6 +65,21 @@ public class Circle extends GeometricObject implements Comparable {
     }
 
     /**
+     * Implementation of compareTo().
+     */
+    public int compareTo(Object obj) throws Error {
+        if (obj instanceof Circle) {
+            //@TODO: comparison logic, here.
+        }
+        else {
+            java.util.Formatter err = new java.util.Formatter();
+            err.format("You cannot compare the value of two non-like objects; must use an object of the %s Class.", 
+                    ); //@TODO: figure out the name of your own class?
+            throw Error(err.toString());
+        }
+    }
+
+    /**
      * Print the text information about this object, an even _higher_ level
      * toString().
      */
