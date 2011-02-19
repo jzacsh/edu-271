@@ -117,4 +117,20 @@ remove this line */
             this.balance = this.balance - w;
         }
     }
+
+    /**
+     * Overriding toString() method.
+     *
+     * @return String  text representation of the object's current state.
+     */
+    public String toString() {
+        java.util.Formatter str = new java.util.Formatter();
+    // String id;
+    // double balance;
+    // double annIntRate;
+    // java.util.Date dateCreated;
+        str.format("Account ID #\t%s\n\tBalance: %.2f\n\tAnnual Interest Rate: %.0f\n\tCreation Date: %s\n",
+                id, balance, annIntRate, dateCreated);
+        return str.toString();
+    }
 }
