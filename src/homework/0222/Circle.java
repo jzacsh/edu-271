@@ -1,5 +1,35 @@
 /**
  * Enhanced Circle class with comparable interface implemented.
+ *
+ * UML Diagram, per assignment:
+ * +--------------------------------------------------------------+
+ * | GeometricObject                                              |
+ * | + p  color                                                   |
+ * | + p  filled                                                  |
+ * | + p  dateCreated                                             |
+ * | + m  getColor                                                |
+ * | + m  setColor                                                |
+ * | + m  isFilled                                                |
+ * | + m  setFilled                                               |
+ * | + m  getDateCreated                                          |
+ * | + m  toString                                                |
+ * |                                                              |
+ * | Comparable                                                   |
+ * | + m  compareTo                                               |
+ * |                                                              |
+ * | Circle                                                       |
+ * | - [extends GeometricObject]                                  |
+ * | - [implements Comparable]                                    |
+ * | + p  radius                                                  |
+ * | + m  getRadius                                               |
+ * | + m  setRadius                                               |
+ * | + m  setArea                                                 |
+ * | + m  getArea                                                 |
+ * | + m  getDiameter                                             |
+ * | + m  getPerimeter                                            |
+ * | + m  printCircle                                             |
+ * | + m  compareTo                                               |
+ * +--------------------------------------------------------------+
  */
 public class Circle extends GeometricObject implements Comparable {
     private double radius;
@@ -66,10 +96,25 @@ public class Circle extends GeometricObject implements Comparable {
 
     /**
      * Implementation of compareTo().
+     * NOTE: Based on the Circle's computed area.
      */
     public int compareTo(Object obj) throws Error {
         if (obj instanceof Circle) {
-            //@TODO: comparison logic, here.
+            thisArea = this.getArea();
+            otherArea = obj.getArea();
+
+            if (thisArea == otherArea) {
+                //objects are the same size
+                return 0;
+            }
+            else if (thisArea < otherArea) {
+                //this object is smaller
+                return -1;
+            }
+            else {
+                //this object is larger
+                return 1;
+            }
         }
         else {
             java.util.Formatter err = new java.util.Formatter();
