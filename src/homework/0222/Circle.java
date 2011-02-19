@@ -1,13 +1,13 @@
 /**
- * Original Circle class from page 304; Listing 9.2
+ * Enhanced Circle class with comparable interface implemented.
  */
-public class CircleOld extends GeometricObject {
+public class Circle extends GeometricObject implements Comparable {
     private double radius;
 
     /**
      * Default constructor.
      */
-    public CircleOld() {
+    public Circle() {
     }
 
     /**
@@ -15,7 +15,7 @@ public class CircleOld extends GeometricObject {
      *
      * @param  double  initial size of the object's radius.
      */
-    public CircleOld(double rad) {
+    public Circle(double rad) {
         this.radius = rad;
     }
 
