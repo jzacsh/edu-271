@@ -43,4 +43,13 @@ public class CheckingAccount extends Account {
     public void setOverDraftLimit(double limit) {
         this.overDraftLimit = java.lang.Math.abs(limit);
     }
+
+    /**
+     * Overriding super.toString().
+     */
+    public String toString() {
+        java.util.Formatter str = new java.util.Formatter();
+        str.format("\tOverdraft Limit: %.2f\n", this.overDraftLimit);
+        return super.toString() + str.toString();
+    }
 }

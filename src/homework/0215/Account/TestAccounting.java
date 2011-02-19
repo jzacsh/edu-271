@@ -11,7 +11,8 @@ public class TestAccounting {
         checking += "\tBalance of\t$%.2f\n";
         checking += "\tAnnual Interest Rate of\t%.0f%%\n";
         checking += "\tOver-draft Limit\t%.2f%%\n";
-        checking += "\ttoString() ->\t%s\n";
+        checking += "\t[ ... starting toString() output ..] \n%s";
+        checking += "\t[... end toString() output ...]\n";
         bal = 9000;
         rate = 100;
         limit = .4;
@@ -27,6 +28,5 @@ public class TestAccounting {
         rate = .4;
         SavingAccount save = new SavingAccount(bal, rate);
         System.out.printf(saving, bal, (rate * 10), save.toString());
-
     }
 }

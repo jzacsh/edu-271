@@ -1,7 +1,9 @@
 public class SavingAccount extends CheckingAccount {
+    protected static final double noOverDraft = 0;
+
     //default constructor
     public SavingAccount() {
-        this.overDraftLimit = 0;
+        this.overDraftLimit = this.noOverDraft;
     }
 
     /**
@@ -13,7 +15,7 @@ public class SavingAccount extends CheckingAccount {
      * @param double annual interest rate for this account.
      */
     public SavingAccount(double bal, double annIntRate) {
-        super(bal, annIntRate, 0);
+        super(bal, annIntRate, noOverDraft);
     }
 
 
@@ -30,5 +32,4 @@ public class SavingAccount extends CheckingAccount {
     public void withdraw(double w) {
         this.balance = this.balance - w;
     }
-
 }
