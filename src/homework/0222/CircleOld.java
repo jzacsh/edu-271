@@ -70,6 +70,7 @@ public class CircleOld extends GeometricObject {
                 getDateCreated(), this.radius);
     }
 
+    //main to main compiler happy
     public static void main(String argv[]) {
     }
 }
