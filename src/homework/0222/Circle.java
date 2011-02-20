@@ -100,8 +100,8 @@ public class Circle extends GeometricObject implements Comparable {
      */
     public int compareTo(Object obj) throws Error {
         if (obj instanceof Circle) {
-            thisArea = this.getArea();
-            otherArea = obj.getArea();
+            double thisArea = this.getArea();
+            double otherArea = ((Circle) obj).getArea();
 
             if (thisArea == otherArea) {
                 //objects are the same size
