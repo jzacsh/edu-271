@@ -21,6 +21,8 @@
  * | - [extends GeometricObject]                                  |
  * | - [implements Comparable]                                    |
  * | + p  radius                                                  |
+ * | + o  compareTo                                               |
+ * | + o  equals                                                  |
  * | + m  getRadius                                               |
  * | + m  setRadius                                               |
  * | + m  setArea                                                 |
@@ -28,7 +30,6 @@
  * | + m  getDiameter                                             |
  * | + m  getPerimeter                                            |
  * | + m  printCircle                                             |
- * | + m  compareTo                                               |
  * +--------------------------------------------------------------+
  */
 public class Circle extends GeometricObject implements Comparable {
@@ -95,8 +96,31 @@ public class Circle extends GeometricObject implements Comparable {
     }
 
     /**
+     * Implementation of equals().
+     * NOTE: Based on the Circles' radius.
+     */
+    public boolean equals(Object obj) throws Error {
+        //@TODO: is there a not_null() built-in in Java?
+      //if (obj instanceof Circle && ((Circle) obj).radius != null) {
+        if (obj instanceof Circle) {
+            if (((Circle) obj).radius == this.radius) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            java.util.Formatter err = new java.util.Formatter();
+            err.format("You cannot compare the value of two non-like objects; must use an object of the %s Class, not the %s Class.",
+                    this.getClass().getName(), obj.getClass().getName());
+            throw new Error(err.toString());
+        }
+    }
+
+    /**
      * Implementation of compareTo().
-     * NOTE: Based on the Circle's computed area.
+     * NOTE: Based on the Circles' computed area.
      */
     public int compareTo(Object obj) throws Error {
         if (obj instanceof Circle) {
