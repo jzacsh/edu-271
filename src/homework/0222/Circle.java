@@ -142,8 +142,8 @@ public class Circle extends GeometricObject implements Comparable {
         }
         else {
             java.util.Formatter err = new java.util.Formatter();
-            err.format("You cannot compare the value of two non-like objects; must use an object of the %s Class.", 
-                    obj.getClass().getName());
+            err.format("You cannot compare the value of two non-like objects; must use an object of the %s Class, not the %s Class.",
+                    this.getClass().getName(), obj.getClass().getName());
             throw new Error(err.toString());
         }
     }
