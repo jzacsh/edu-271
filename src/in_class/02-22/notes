@@ -1,3 +1,8 @@
 Utilizing Layout Managers:
     FlowLayout
+    - just add stuff
     - adds items left-to-right
+
+    GridLayout
+    - specificy rows/columns of sections
+    - add to specific section
