@@ -1,7 +1,6 @@
-import java.awt.*;
 import java.swing.*;
+import java.awt.*;
 
-+
 /**
  * +-------------------------------------------+
  * | Invoice                             _ O X |
@@ -47,9 +46,9 @@ public class Invoice extends JFrame {
     public static void main(String[] argv) {
         Invoice frame = new Invoice();
         frame.setTitle("Invoice");
-        frame.setTitle("");
-        frame.setTitle("");
-        frame.setTitle("");
-        this.add(new JButton(""), BorderLayout.EAST);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(200, 125);
+        frame.setVisible(true);
     }
 }
