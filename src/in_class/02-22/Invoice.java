@@ -37,17 +37,9 @@ public class Invoice extends JFrame {
         //add buttons
         JButton calc = new JButton("Calculate");
         JButton exit = new JButton("Exit");
+
         buttons.add(calc);
         buttons.add(exit);
-
-        //@TODO: make this work:
-        exit.addWindowListener(
-            new WindowAdapter() {
-                public void windowClosing(WindowEvent e) {
-                        System.exit(0);
-                }
-            }
-        );
 
         this.add(buttons, BorderLayout.SOUTH);
     }
