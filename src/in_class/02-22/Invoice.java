@@ -1,4 +1,4 @@
-import java.swing.*;
+import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -50,5 +50,8 @@ public class Invoice extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(200, 125);
         frame.setVisible(true);
+
+        Dimension dim = new Dimension(200, 125);
+        frame.setMinimumSize(dim);
     }
 }
