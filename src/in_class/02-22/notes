@@ -6,3 +6,10 @@ Utilizing Layout Managers:
     GridLayout
     - specificy rows/columns of sections
     - add to specific section
+
+    BorderLayout
+    - in reference to borders of window
+    - NORTH
+    - SOUTH
+    - WEST
+    - CENTER [ will default ]
