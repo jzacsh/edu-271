@@ -8,6 +8,7 @@ attached as ./CircleOld.java ) to extend GeometricObject and implement the
 Comparable interface. Override the equals and hashCode methods in the Object
 class. Two Circle objects are equal if their radii are the same. Draw the UML
 diagram that involves Circle, GeometricObject, and Comparable.
+[ according to professor: do not hashCode method ]
 
 
 10.9
