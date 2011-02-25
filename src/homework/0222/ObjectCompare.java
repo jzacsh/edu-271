@@ -28,6 +28,5 @@ public class ObjectCompare {
 
     //main
     public static void main(String[] argv) {
-        return 0;
     }
 }
