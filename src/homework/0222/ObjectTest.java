@@ -9,7 +9,7 @@ public class ObjectTest {
         //test strings
         String[] obj1 = new String[aSize];
         System.out.printf("Testing with strings\n");
-        for (i = 0; i < obs.length; i++) {
+        for (i = 0; i < obj1.length; i++) {
             System.out.printf("...Creating object %.0f of %.0f\n", i, obj1.length);
             obj1[i] = "" + i;
         }
