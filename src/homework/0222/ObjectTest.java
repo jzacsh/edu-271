@@ -7,31 +7,33 @@ public class ObjectTest {
         int aSize = 10;
 
         //test strings
-        String[] obs = new String[aSize];
+        String[] obj1 = new String[aSize];
         System.out.printf("Testing with strings\n");
         for (i = 0; i < obs.length; i++) {
-            System.out.printf("...Creating object %.0f of %.0f\n", i, obs.length);
-            obs[i] = "" + i;
+            System.out.printf("...Creating object %.0f of %.0f\n", i, obj1.length);
+            obj1[i] = "" + i;
         }
-        Object obj = ObjectCompare(obs);
-        System.out.printf("largest object is: %s\n", obj.toString());
+        String stringTest = ObjectCompare.max(obj1);
+        System.out.printf("largest object is: %s\n", stringTest.toString());
 
         //test integers
-        int[] obs = new int[aSize];
+        int[] obj2 = new int[aSize];
         System.out.printf("\nTesting with integers\n");
-        for (i = 0; i < obs.length; i++) {
-            System.out.printf("...Creating object %.0f of %.0f\n", i, obs.length);
-            obs[i] = i;
+        for (i = 0; i < obj2.length; i++) {
+            System.out.printf("...Creating object %.0f of %.0f\n", i, obj2.length);
+            obj2[i] = i;
         }
-        System.out.printf("largest object is: %s", (String) ObjectCompare(obs));
+        int intTest = ObjectCompare.max(obj2);
+        System.out.printf("largest object is: %s", intTest.toString());
 
         //test dates
         System.out.printf("\nTesting with dates\n");
-        java.util.Date[] obs = java.util.Date[aSize];
-        for (i = 0; i < obs.length; i++) {
-            System.out.printf("...Creating object %.0f of %.0f\n", i, obs.length);
-            obs[i] = new java.util.Date();
+        java.util.Date[] obj3 = java.util.Date[aSize];
+        for (i = 0; i < obj3.length; i++) {
+            System.out.printf("...Creating object %.0f of %.0f\n", i, obj3.length);
+            obj3[i] = new java.util.Date();
         }
-        System.out.printf("largest object is: %s", (String) new ObjectCompare(obs));
+        java.util.Date dateTest = ObjectCompare.max(obj3);
+        System.out.printf("largest object is: %s", (String) dateTest.toString());
     }
 }
