@@ -13,7 +13,7 @@ public class ObjectTest {
             System.out.printf("...Creating object %.0f of %.0f\n", i, obj1.length);
             obj1[i] = "" + i;
         }
-        String stringTest = ObjectCompare.max(obj1);
+        String stringTest = (String) ObjectCompare.max(obj1);
         System.out.printf("largest object is: %s\n", stringTest.toString());
 
         //test integers
@@ -23,8 +23,11 @@ public class ObjectTest {
             System.out.printf("...Creating object %.0f of %.0f\n", i, obj2.length);
             obj2[i] = i;
         }
-        int intTest = ObjectCompare.max(obj2);
-        System.out.printf("largest object is: %s", intTest.toString());
+        // why would passage of int[] aray to max() fail??
+        if (obj2 instanceof Object) {
+            int intTest = ObjectCompare.max(obj2);
+            System.out.printf("largest object is: %s", intTest.toString());
+        }
 
         //test dates
         System.out.printf("\nTesting with dates\n");
