@@ -2,7 +2,7 @@ lab 5
 pg 423; #12.1, #12.2, #12.3, #12.4
 
 12.1
-(using the FlowLayout manager) Write a program tha tmeets the following
+(using the FlowLayout manager) Write a program that meets the following
 requirements (see 12.16):
 - Create a frame and set its layout to FlowLayout
 - Create two panels and add them to the frame.
