@@ -11,44 +11,43 @@ public class exFlowLayout extends JFrame {
     //default constructor
     public exFlowLayout() {
         super(); //usually implicitly called -- this created the mane frame
+
+        JPanel panelMain = new JPanel();
+        panelMain.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 20));
+
+        //
+        //create inner button-panels
+        //
+        int i = 0;
+
+        //buttons 1-3
+        JPanel panelLeft = new JPanel();
+        panelLeft.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 10));
+        for (i = i; i < 3; i++) {
+            panelRight.add(new JButton("Button #"+ (String) int.toString(i + 1)));
+        }
+
+        //buttons 3-6
+        JPanel panelRight = new JPanel();
+        panelRight.setLayout(new FlowLayout(FlowLayout.RIGHT, 5, 10));
+        for (i = i; i < 6; i++) {
+            panelRight.add(new JButton("Button #"+ (String) int.toString(i + 2)));
+        }
     }
 
     //main
     public static void main(String[] argv) {
-        //set the LayoutManager
-        //flowlayout: aligned left, horiz gap 10, vert gap 20
-        this.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 20));
+        exFlowLayout example = new exFlowLayout();
 
-        //create the left and right panes
-        FlowLayout panelRight = new FlowLayout(FlowLayout.RIGHT, 5, 10);
-        FlowLayout panelLeft  = new FlowLayout(FlowLayout.LEFT, 5, 10);
+        example.setTitle("Example FlowLayout, Assignment 12.1");
+        example.setLocationRelativeTo(null);
+        example.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //
-        //set the buttons for right and left panes
-        //
-        int i;
-        //set buttons 1-3 in right-side pane
-        for (i = 0; i < 3; i++) {
-            panelRight.add(new JButton("button " + (String) (i+1)));
-        }
+        Dimension d = new Dimension(600, 200);
+        example.setMinimumSize(d);
 
-        //set buttons 1-3 in left-side pane
-        for (i = 0; i < 3; i++) {
-            panelLeft.add(new JButton("button " + (String) (i+1)));
-        }
+        example.setSize(600, 200);
+        example.setVisible(true);
 
-        //
-        //expose the above work:
-        //
-
-        //create the frame
-        exFlowLayout frame = new exFlowLayout();
-
-        //set things up
-        frame.setTitle("ShowFlowLayout");
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300, 300);
-        frame.setVisible(true);
     }
 }
