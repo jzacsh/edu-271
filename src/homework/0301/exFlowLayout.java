@@ -49,8 +49,9 @@ public class exFlowLayout extends JFrame {
         example.setLocationRelativeTo(null);
         example.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Dimension d = new Dimension(600, 200);
-        example.setMinimumSize(d);
+        //@TODO: what do i need to import for this?
+      //Dimension d = new Dimension(600, 200);
+      //example.setMinimumSize(d);
 
         example.setSize(600, 200);
         example.setVisible(true);
