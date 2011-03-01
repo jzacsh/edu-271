@@ -23,16 +23,22 @@ public class exFlowLayout extends JFrame {
         //buttons 1-3
         JPanel panelLeft = new JPanel();
         panelLeft.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 10));
-        for (i = i; i < 3; i++) {
-            panelRight.add(new JButton("Button #"+ (String) int.toString(i + 1)));
-        }
+      //for (i = i; i < 3; i++) {
+      //    panelLeft.add(new JButton("Button #"+ (String) int.toString(i + 1)));
+      //}
+        panelLeft.add(new JButton("Button #1"));
+        panelLeft.add(new JButton("Button #2"));
+        panelLeft.add(new JButton("Button #3"));
 
         //buttons 3-6
         JPanel panelRight = new JPanel();
         panelRight.setLayout(new FlowLayout(FlowLayout.RIGHT, 5, 10));
-        for (i = i; i < 6; i++) {
-            panelRight.add(new JButton("Button #"+ (String) int.toString(i + 2)));
-        }
+      //for (i = i; i < 6; i++) {
+      //    panelRight.add(new JButton("Button #"+ (String) int.toString(i + 2)));
+      //}
+        panelRight.add(new JButton("Button #1"));
+        panelRight.add(new JButton("Button #2"));
+        panelRight.add(new JButton("Button #3"));
     }
 
     //main
