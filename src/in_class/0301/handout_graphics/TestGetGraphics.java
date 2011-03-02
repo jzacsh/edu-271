@@ -6,7 +6,7 @@ public class TestGetGraphics extends JFrame {
 
   public TestGetGraphics() {
     add(jlblBanner);
-   
+
   }
 
   public static void main(String[] args) {
