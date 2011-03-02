@@ -31,10 +31,10 @@ public class ObjectTest {
         java.util.Date[] obj3 = new java.util.Date[aSize];
         for (i = 0; i < obj3.length; i++) {
             obj3[i] = new java.util.Date();
-            System.out.printf("\t...creating Date object #%d of %d: %s\n", i+1, obj3.length, obj3[i].toString());
+            System.out.printf("\t...creating Date object #%d of %d: %s\t(epoch: %d)\n", i+1, obj3.length, obj3[i].toString(), (int) obj3[i].getTime());
         }
-        //@TODO: read Date api: print epoc to make these proofs more sensible:
         java.util.Date dateTest = (java.util.Date) ObjectCompare.max(obj3);
         System.out.printf("\tlargest object is: %s\n", (String) dateTest.toString());
+        System.out.printf("\tlargest object is: %d\n", (int) dateTest.getTime());
     }
 }
