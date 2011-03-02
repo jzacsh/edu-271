@@ -6,10 +6,10 @@ public class ObjectCompare {
      * @return  Object  the largest object in the set.
      */
     public static Object max(Object[] a) throws Error {
-        Object largest = new Object();
+        Object largest = a[0];// = new Object();
 
         //process each object
-        for (int i = 0; i < a.length; i--) {
+        for (int i = 0; i < a.length; i++) {
             //sanity check:
             if (!(a[i] instanceof Comparable)) {
                 java.util.Formatter err = new java.util.Formatter();
@@ -23,10 +23,6 @@ public class ObjectCompare {
             }
         }
 
-        return 0;
-    }
-
-    //main
-    public static void main(String[] argv) {
+       return largest;
     }
 }

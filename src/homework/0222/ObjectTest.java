@@ -10,33 +10,31 @@ public class ObjectTest {
         String[] obj1 = new String[aSize];
         System.out.printf("Testing with strings\n");
         for (i = 0; i < obj1.length; i++) {
-            System.out.printf("...Creating object %.0f of %.0f\n", i, obj1.length);
             obj1[i] = "" + i;
+            System.out.printf("\t...creating string object #%d of %d: %s\n", i+1, obj1.length, obj1[i].toString());
         }
-        String stringTest = (String) ObjectCompare.max(obj1);
-        System.out.printf("largest object is: %s\n", stringTest.toString());
+        Object stringTest =  ObjectCompare.max(obj1);
+        System.out.printf("\tlargest object is: %s\n", stringTest.toString());
 
         //test integers
-        int[] obj2 = new int[aSize];
-        System.out.printf("\nTesting with integers\n");
+        Integer [] obj2 = new Integer[aSize];
+        System.out.printf("Testing with integers\n");
         for (i = 0; i < obj2.length; i++) {
-            System.out.printf("...Creating object %.0f of %.0f\n", i, obj2.length);
             obj2[i] = i;
+            System.out.printf("\t...creating integer object #%d of %d: %d\n", i+1, obj2.length, obj2[i]);
         }
-        // why would passage of int[] aray to max() fail??
-        if (obj2 instanceof Object) {
-            int intTest = ObjectCompare.max(obj2);
-            System.out.printf("largest object is: %s", intTest.toString());
-        }
+        Integer intTest = (Integer) ObjectCompare.max(obj2);
+        System.out.printf("\tlargest object is: %s\n", intTest.toString());
 
         //test dates
-        System.out.printf("\nTesting with dates\n");
-        java.util.Date[] obj3 = java.util.Date[aSize];
+        System.out.printf("Testing with dates\n");
+        java.util.Date[] obj3 = new java.util.Date[aSize];
         for (i = 0; i < obj3.length; i++) {
-            System.out.printf("...Creating object %.0f of %.0f\n", i, obj3.length);
             obj3[i] = new java.util.Date();
+            System.out.printf("\t...creating Date object #%d of %d: %s\n", i+1, obj3.length, obj3[i].toString());
         }
-        java.util.Date dateTest = ObjectCompare.max(obj3);
-        System.out.printf("largest object is: %s", (String) dateTest.toString());
+        //@TODO: read Date api: print epoc to make these proofs more sensible:
+        java.util.Date dateTest = (java.util.Date) ObjectCompare.max(obj3);
+        System.out.printf("\tlargest object is: %s\n", (String) dateTest.toString());
     }
 }
