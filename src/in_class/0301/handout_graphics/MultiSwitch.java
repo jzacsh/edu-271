@@ -22,33 +22,46 @@ public class MultiSwitch extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    }
 
+    public static int randomRGB() {
+        //@TODO: why doesn't this work?
+     // return  ((int) Math.random()) * 255;
+        return  (int) (Math.random()  * 255);
+    }
+
+    public static Color randomColor() {
+        return new Color(randomRGB(), randomRGB(), randomRGB());
+    }
+
    public void paint( Graphics g )
    {
       String mess;
       int k;
+      Graphics2D g2d = (Graphics2D) g;
 
       super.paint(g);
-           switch( choice ) {
-            case 1:
-                for (k = 1; k <= 10; k++) {
-                     g.drawLine( 20, 20, 250, (50 * k));
-                }
-                break;
-            case 2:
-                for (k = 1; k <= 10; k++) {
-                    g.drawRect( 20  , 20 , (50 * k), (50 * k));
-                }
-                break;
-            case 3:
-                for (k = 1; k <= 10; k++) {
-                    g.drawOval( 20 , 20 , (50 * k) , (50 * k) );
-                }
-               break;
-            default:
-               mess = "Bad choice - " + choice;
-               JOptionPane.showMessageDialog(
-                  null, mess );
-         } // end switch
+       switch( choice ) {
+        case 1:
+            for (k = 1; k <= 10; k++) {
+                 g.drawLine( 20, 20, 250, (50 * k));
+            }
+            break;
+        case 2:
+            for (k = 10; k > 0; k--) {
+                g2d.setPaint(randomColor());
+              //g.drawRect( 20  , 20 , (50 * k), (50 * k));
+                g.fillRect( 20  , 20 , (50 * k), (50 * k));
+            }
+            break;
+        case 3:
+            for (k = 1; k <= 10; k++) {
+                g.drawOval( 20 , 20 , (50 * k) , (50 * k) );
+            }
+           break;
+        default:
+           mess = "Bad choice - " + choice;
+           JOptionPane.showMessageDialog(
+              null, mess );
+     } // end switch
 
    } // end paint()
     public static void main (String args[])
