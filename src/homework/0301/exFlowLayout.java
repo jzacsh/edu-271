@@ -12,8 +12,7 @@ public class exFlowLayout extends JFrame {
     public exFlowLayout() {
         super(); //usually implicitly called -- this created the mane frame
 
-        JPanel panelMain = new JPanel();
-        panelMain.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 20));
+        this.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
 
         //
         //create inner button-panels
@@ -30,6 +29,8 @@ public class exFlowLayout extends JFrame {
         panelLeft.add(new JButton("Button #2"));
         panelLeft.add(new JButton("Button #3"));
 
+        this.add(panelLeft);
+
         //buttons 3-6
         JPanel panelRight = new JPanel();
         panelRight.setLayout(new FlowLayout(FlowLayout.RIGHT, 5, 10));
@@ -39,6 +40,8 @@ public class exFlowLayout extends JFrame {
         panelRight.add(new JButton("Button #1"));
         panelRight.add(new JButton("Button #2"));
         panelRight.add(new JButton("Button #3"));
+
+        this.add(panelRight);
     }
 
     //main
@@ -53,8 +56,7 @@ public class exFlowLayout extends JFrame {
       //Dimension d = new Dimension(600, 200);
       //example.setMinimumSize(d);
 
-        example.setSize(600, 200);
+        example.setSize(800, 90);
         example.setVisible(true);
-
     }
 }
