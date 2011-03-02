@@ -21,7 +21,7 @@ Figure 12.16
 
 12.2
 (Using the BorderLayout manager) Rewrite the preceding program to create the
-same user interface, but instead of using FlowLayout fo the frame, use
+same user interface, but instead of using FlowLayout for the frame, use
 BorderLayout. Place one panel in the south of the frame and the other panel in
 the center.
 
