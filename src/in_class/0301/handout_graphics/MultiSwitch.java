@@ -25,23 +25,24 @@ public class MultiSwitch extends JFrame {
    public void paint( Graphics g )
    {
       String mess;
+      int k;
+
       super.paint(g);
            switch( choice ) {
             case 1:
-
-                for (int k = 1; k <= 10; k++) {
+                for (k = 1; k <= 10; k++) {
                      g.drawLine( 20, 20, 250, (50 * k));
                 }
                 break;
             case 2:
-
-                    g.drawRect( 20  , 20 ,
-                           50 , 50  );
+                for (k = 1; k <= 10; k++) {
+                    g.drawRect( 20  , 20 , (50 * k), (50 * k));
+                }
                 break;
             case 3:
-
-                    g.drawOval( 20 , 20 ,
-                           50 , 50  );
+                for (k = 1; k <= 10; k++) {
+                    g.drawOval( 20 , 20 , (50 * k) , (50 * k) );
+                }
                break;
             default:
                mess = "Bad choice - " + choice;
