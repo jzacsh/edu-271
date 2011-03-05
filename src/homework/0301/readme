@@ -1,7 +1,7 @@
 lab 5
 pg 423; #12.1, #12.2, #12.3, #12.4
 
-12.1
+12.1 - DONE
 (using the FlowLayout manager) Write a program that meets the following
 requirements (see 12.16):
 - Create a frame and set its layout to FlowLayout
@@ -19,14 +19,14 @@ Figure 12.16
     +----------------------------------------------------------------------+
 
 
-12.2
+12.2 - DONE
 (Using the BorderLayout manager) Rewrite the preceding program to create the
 same user interface, but instead of using FlowLayout for the frame, use
 BorderLayout. Place one panel in the south of the frame and the other panel in
 the center.
 
 
-12.3
+12.3 - DONE
 (Using the GridLayout manager) Rewrite the preceding program to create the
 same user interface. Instead of using FlowLayout for the panels, use a
 GridLayout of two rows and three columns.
