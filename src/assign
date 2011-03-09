@@ -46,11 +46,17 @@ x Lab 3
     x SavingsAccount: cannot be withdrawn
 
 DUE 02-22
-- Lab4
+x Lab4
 
 DUE 03-01
 - Lab 5   (Layout Managers)
-    - part 1: FlowLayout
-    - part 2: BorderLayout
-    - part 3: GridLayout
+    x part 1: FlowLayout
+    x part 2: BorderLayout
+    x part 3: GridLayout
     - part 4: extend JPanel
+
+- Lab 6   (Events)
+    - source (one file) from lab 5:
+        - add event handler for the buttons
+        - display *which* button was selected.
+            - use e.getActionCommand()
