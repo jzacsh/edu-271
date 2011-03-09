@@ -34,12 +34,12 @@ public class TestPanels extends JFrame
       pn.add(btNum[i] = new JButton(" "+i));
       
     }
-	// last row
-	pn.add(btNum[10] = new JButton("*"));
-	pn.add(btNum[0] = new JButton("0"));
-	
-	pn.add(btNum[11] = new JButton("#"));
-	
+    // last row
+    pn.add(btNum[10] = new JButton("*"));
+    pn.add(btNum[0] = new JButton("0"));
+    
+    pn.add(btNum[11] = new JButton("#"));
+    
     //create a new text field
     tfNum = new JTextField();
 
