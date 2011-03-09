@@ -14,13 +14,19 @@ public class AnimationDemo extends JFrame {
     frame.setTitle("AnimationDemo");
     frame.setLocationRelativeTo(null); // Center the frame
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setSize(280, 100);
+    frame.setSize(480, 700);
     frame.setVisible(true);
   }
 
   // Displaying a moving message
   static class MovingMessagePanel extends JPanel {
     private String message = "Welcome to Java";
+    private static int tempXMove = 0;
+    private static int tempYMove = 0;
+    private static int xmovement = 10;
+    private static int ymovement = 10;
+    private static int Xdirection = 1;
+    private static int Ydirection = 1;
     private int xCoordinate = 0;
     private int yCoordinate = 20;
 
@@ -36,10 +42,33 @@ public class AnimationDemo extends JFrame {
     public void paintComponent(Graphics g) {
       super.paintComponent(g);
 
-      if (xCoordinate > getWidth()) {
-        xCoordinate = -20;
+
+      System.out.printf("\n\nstarting (x, y) = (%s, %s)\n", xCoordinate, yCoordinate);
+      if (yCoordinate > getHeight()) {
+          System.out.printf("past TOP (y-coord = %s; height = %s)\n", xCoordinate, getHeight());
+          Ydirection = -1;
       }
-      xCoordinate += 5;
+      else if (yCoordinate < 0) {
+          //@TODO: this doesn't make sense
+          System.out.printf("past BOTTOM (y-coord = %s; height = %s)\n", yCoordinate, getHeight());
+          Ydirection = 1;
+      }
+
+      System.out.printf("starting xCoordinate: %s\n", xCoordinate);
+      if (xCoordinate > getWidth()) {
+          System.out.printf("past RIGHT (x-coord = %s; width = %s)\n", xCoordinate, getWidth());
+          Xdirection = -1;
+      }
+      else if (xCoordinate < 0) {
+          //@TODO: this doesn't make sense
+          System.out.printf("past LEFT (x-coord = %s; width = %s)\n", xCoordinate, getWidth());
+          Xdirection = 1;
+      }
+
+      xCoordinate += Xdirection *  xmovement;
+      yCoordinate += Ydirection *  ymovement;
+      System.out.printf("new (x, y) = (%s, %s)\n\n", xCoordinate, yCoordinate);
+
       g.drawString(message, xCoordinate, yCoordinate);
     }
 
