@@ -5,7 +5,7 @@ import javax.swing.*;
 public class MoveMessageDemo extends JFrame {
   public MoveMessageDemo() {
     // Create a MovableMessagePanel instance for moving a message
-    MovableMessagePanel p = new MovableMessagePanel("Welcome to Java");
+    MovableMessagePanel p = new MovableMessagePanel("Welcome to NEW Java");
 
     // Place the message panel in the frame
     getContentPane().setLayout(new BorderLayout());
