@@ -10,7 +10,7 @@ import java.awt.Panel;
 public class exFlowLayout extends JFrame {
     //default constructor
     public exFlowLayout() {
-        super(); //usually implicitly called -- this created the mane frame
+        super(); //usually implicitly called -- this created the main frame
 
         this.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
 
