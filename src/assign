@@ -49,11 +49,11 @@ DUE 02-22
 x Lab4
 
 DUE 03-01
-- Lab 5   (Layout Managers)
+x Lab 5   (Layout Managers)
     x part 1: FlowLayout
     x part 2: BorderLayout
     x part 3: GridLayout
-    - part 4: extend JPanel
+    x part 4: extend JPanel
 
 - Lab 6   (Events)
     - source (one file) from lab 5:
