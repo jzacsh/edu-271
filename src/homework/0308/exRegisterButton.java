@@ -1,8 +1,13 @@
 import javax.swing.*;
+import java.awt.event.*;
 import java.awt.FlowLayout;
 import java.awt.Panel;
 
-public class exRegisterButton extends JFrame implements ActionListener {
+/**
+ * Registering an event listener via java interface.
+ */
+
+public class exRegisterButton extends JFrame implements ActionListener{
     //default constructor
     public exRegisterButton() {
         super(); //usually implicitly called -- this created the main frame
@@ -14,19 +19,23 @@ public class exRegisterButton extends JFrame implements ActionListener {
         panelLeft.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 10));
 
         //create buttons on the new panel.
-        panelLeft.add(new JButton("OK"));
-        panelLeft.add(new JButton("Cancel"));
-
-        //register a listener
-        ActionListener reg = new exRegistration();
-        panelLeft.addActionListener(reg);
+        JButton jbtOk = new JButton("OK");
+        panelLeft.add(jbtOk);
+        JButton jbtCancel = new JButton("Cancel");
+        panelLeft.add(jbtCancel);
 
         //add panel to the frame
         this.add(panelLeft);
+
+        //register a listener
+        jbtOk.addActionListener(this);
+        jbtCancel.addActionListener(this);
     }
 
-    public void exRegistration(ActionEvent e) {
-        System.out.printf("A button was pressed.\nAttempting implicit toString() of event object: %s\n", e);
+    public void actionPerformed(ActionEvent e) {
+        // _ton_ of stuff packed into an event object:
+     // System.out.printf("A button was pressed.\nAttempting implicit toString() of event object: %s\n", e);
+        System.out.printf("A '%s' button was pressed.\n", e.getSource()); //@TODO: why can't i reference this?
     }
 
     //main
