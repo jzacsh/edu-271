@@ -12,11 +12,11 @@ public class exRegisterButton extends JFrame implements ActionListener{
     public exRegisterButton() {
         super(); //usually implicitly called -- this created the main frame
 
-        this.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        this.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5));
 
         //create inner button-panel
         JPanel panelLeft = new JPanel();
-        panelLeft.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 10));
+        panelLeft.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 5));
 
         //create buttons on the new panel.
         JButton jbtOk = new JButton("OK");
@@ -33,9 +33,10 @@ public class exRegisterButton extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        // _ton_ of stuff packed into an event object:
-     // System.out.printf("A button was pressed.\nAttempting implicit toString() of event object: %s\n", e);
-        System.out.printf("A '%s' button was pressed.\n", e.getSource()); //@TODO: why can't i reference this?
+        // _ton_ of stuff packed into an event object; getSource().
+        // Specifically different components generate event objects with *more*
+        // methods.
+        System.out.printf("The '%s' button was pressed.\n", e.getActionCommand());
     }
 
     //main
@@ -46,7 +47,7 @@ public class exRegisterButton extends JFrame implements ActionListener{
         example.setLocationRelativeTo(null);
         example.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        example.setSize(800, 90);
+        example.setSize(250, 85);
         example.setVisible(true);
     }
 }
