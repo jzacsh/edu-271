@@ -11,25 +11,50 @@ import java.awt.*;
 
 public class exButtons extends JFrame {
     //default constructor.
-    public exButtons {
+    public exButtons() {
         super(); //usually implicitly called -- this created the mane frame
-        exJPanel left  = new exJPanel();
-        exJPanel right = new exJPanel();
-        left.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
-        right.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
 
-        this.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        //set the main frame.
+        this.setLayout(new FlowLayout(FlowLayout.CENTER));
+
+        //
+        //set the needed button-panels
+        //
+        exJPanel buttonsLeft  = new exJPanel();
+        buttonsLeft.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 5));
+        this.add(buttonsLeft);
+
+        exJPanel buttonsRight = new exJPanel();
+        buttonsRight.setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 5));
+        this.add(buttonsRight);
+    }
+
+    public static void main(String[] argv) {
+        exButtons butts = new exButtons();
+
+        butts.setTitle("Example Panel Class, Assignment 12.4");
+        butts.setLocationRelativeTo(null);
+        butts.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        butts.setSize(800, 90);
+        butts.setVisible(true);
     }
 }
 
 class exJPanel extends JPanel {
     //default constructor
     public exJPanel() {
-        this.super(); //implied
+        super(); //implied
 
-        this.addButton("Button a");
-        this.addButton("Button b");
-        this.addButton("Button c");
+        JPanel pane = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
+
+        //for educational sake, i'm explicitly specifying `this` namespace. i'm
+        //aware that this is assumed, regardless.
+        pane.add(new JButton("Button a"));
+        pane.add(new JButton("Button b"));
+        pane.add(new JButton("Button c"));
+
+        this.add(pane);
     }
 
     //main
