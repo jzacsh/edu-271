@@ -56,8 +56,8 @@ x Lab 5   (Layout Managers)
     x part 4: extend JPanel
 
 DUE 03-22
-- Lab 6   (Events)
-    - source (one file) from lab 5:
-        - add event handler for the buttons
-        - display *which* button was selected.
-            - use e.getActionCommand()
+x Lab 6   (Events)
+    x source (one file) from lab 5:
+        x add event handler for the buttons
+        x display *which* button was selected.
+            x use e.getActionCommand()
