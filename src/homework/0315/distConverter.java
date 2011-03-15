@@ -17,25 +17,16 @@ public class distConverter extends JFrame implements ActionListener {
         this.setLayout(new BorderLayout(5, 2));
 
         //
-        //build the panel needed for labels
-        //
-        JPanel label = new JPanel(new GridLayout(2, 1));
-        JLabel milesLabel = new JLabel("Miles");
-        JLabel kilomLabel = new JLabel("Kilometers");
-
-        //add the labels to their panel
-        label.add(milesLabel);
-        label.add(kilomLabel);
-
-        //add the panel to the left side of the frame
-        this.add(label, BorderLayout.WEST);
-
-        //
         //build the panel needed for text inputs
         //
         JPanel input = new JPanel(new GridLayout(2, 1));
         JTextField milesInput = new JTextField();
         JTextField kilomInput = new JTextField("1"); //fill with default value "1"
+
+        //register ourselves as listeners to events on the new input fields
+        //@TODO: set custom calculation methods here.
+        milesInput.addActionListener(this); //@TODO: this is the key to this lab
+        kilomInput.addActionListener(this); //@TODO: this is the key to this lab
 
         //add the text fields to their panel
         input.add(milesInput);
@@ -43,10 +34,30 @@ public class distConverter extends JFrame implements ActionListener {
 
         //add the panel to the right side of the frame
         this.add(input, BorderLayout.CENTER);
+
+        //
+        //build the panel needed for labels
+        //
+        JPanel label = new JPanel(new GridLayout(2, 1));
+        JLabel milesLabel = new JLabel("Miles");
+        JLabel kilomLabel = new JLabel("Kilometers");
+
+    //  @TODO: find out what setLabelFor() is used for
+    //  //associate the labels with the corresponding text fields.
+    //  milesLabel.setLabelFor(milesInput);
+    //  kilomLabel.setLabelFor(kilomInput);
+
+        //add the labels to their panel
+        label.add(milesLabel);
+        label.add(kilomLabel);
+
+        //add the panel to the left side of the frame
+        this.add(label, BorderLayout.WEST);
     }
 
     //interface for event listener
     public void actionPerformed(ActionEvent e) {
+        System.out.printf("Data, '%s' received from: '%s'.\n", e.getActionCommand(), e.getSource());
     }
 
     //main
