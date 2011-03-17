@@ -1,0 +1,28 @@
+lab 8
+pg 531; #15.15
+
+(Using JScrollBar) Write a program that uses scroll bars to select the
+foreground color for a label, as shown in Figure 15.47. Three horizontal scroll
+bars are used for selecting the red, green, and blue components of the color.
+Use a title border on the panel that holds the scroll bars.
+
+    Figure 15.47
+
+    +----------------------------------------------------+
+    | Exercise15_15                               _ O X  |
+    |----------------------------------------------------|
+    |                                                    |
+    |                    Show Colors                 <--------[ Pane with BorderLayout]
+    |                                                    |
+    | +- Choose colors --------------------------------+ |
+    | |        +------------------------------------+  | |
+    | | Red    | <|------------|||---------------|> |  | |
+    | |        |                                    |  | |
+    | | Green  | <|---|||------------------------|> |  | |
+    | |        |                                    | <-------[ Panel with GridLayout for three scroll bars ]
+    | | Blue   | <|--------------------|||-------|> |  | |
+    | |   ^    +------------------------------------+  | |
+    | +---|--------------------------------------------+ |
+    +-----|----------------------------------------------+
+          |
+ [ Panel with GridLayout for three labels ]
