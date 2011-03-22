@@ -19,7 +19,7 @@ public class JadderA extends JFrame
 
         // Now create some items to display to the user
 
-        info = new JLabel("              Enter two numbers to add, then press the = button                        ");
+        info = new JLabel("Enter two numbers to add, then press the = button");
         add(info);
         text1 = new JTextField(10);
         add(text1);
