@@ -22,7 +22,7 @@ public class RadioButtonDemo extends CheckBoxDemo {
     jpRadioButtons.add(jrbRed = new JRadioButton("Red"));
     jpRadioButtons.add(jrbGreen = new JRadioButton("Green"));
     jpRadioButtons.add(jrbBlue = new JRadioButton("Blue"));
-    add(jpRadioButtons, BorderLayout.WEST);
+    this.add(jpRadioButtons, BorderLayout.WEST);
 
     // Create a radio button group to group three buttons
     ButtonGroup group = new ButtonGroup();
