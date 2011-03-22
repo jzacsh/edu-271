@@ -32,7 +32,7 @@ public IceCream()
 
     vanilla = new JRadioButton("Vanilla", true);
     vanilla.setForeground(Color.white);
-	vanilla.setBackground(Color.black);
+    vanilla.setBackground(Color.black);
     
     choc = new JRadioButton("Chocolate", false);
     choc.setForeground(dark);

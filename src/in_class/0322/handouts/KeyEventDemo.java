@@ -39,7 +39,7 @@ public class KeyEventDemo extends JFrame {
             case KeyEvent.VK_LEFT: x -= 10; break;
             case KeyEvent.VK_RIGHT: x += 10; break;
             default: keyChar = e.getKeyChar();
-				
+                
           }
 
           repaint();

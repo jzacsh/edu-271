@@ -66,7 +66,7 @@ public class ComboBoxDemo extends JFrame {
     ComboBoxDemo frame = new ComboBoxDemo();
     frame.pack();
     frame.setTitle("ComboBoxDemo");
-	frame.setSize(300,400);
+    frame.setSize(300,400);
     frame.setLocationRelativeTo(null); // Center the frame
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setVisible(true);
