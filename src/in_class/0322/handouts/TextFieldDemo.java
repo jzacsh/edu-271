@@ -19,10 +19,9 @@ public class TextFieldDemo extends RadioButtonDemo {
     // Create a new panel to hold label and text field
     JPanel jpTextField = new JPanel();
     jpTextField.setLayout(new BorderLayout(5, 0));
-    jpTextField.add(
-      new JLabel("Enter a new message"), BorderLayout.WEST);
+    jpTextField.add(new JLabel("Enter a new message"), BorderLayout.WEST);
     jpTextField.add(jtfMessage, BorderLayout.CENTER);
-    add(jpTextField, BorderLayout.NORTH);
+    this.add(jpTextField, BorderLayout.NORTH);
 
     jtfMessage.setHorizontalAlignment(JTextField.RIGHT);
 
