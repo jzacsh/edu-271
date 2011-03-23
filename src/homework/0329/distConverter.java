@@ -12,6 +12,9 @@ import java.awt.BorderLayout;
  */
 
 public class distConverter extends JFrame implements ActionListener {
+    protected JTextField milesInput;
+    protected JTextField kilomInput;
+    
     //default constrcutor
     public distConverter() {
         this.setLayout(new BorderLayout(5, 2));
@@ -20,13 +23,12 @@ public class distConverter extends JFrame implements ActionListener {
         //build the panel needed for text inputs
         //
         JPanel input = new JPanel(new GridLayout(2, 1));
-        JTextField milesInput = new JTextField();
-        JTextField kilomInput = new JTextField("1"); //fill with default value "1"
+        milesInput = new JTextField();
+        kilomInput = new JTextField("1"); //fill with default value "1"
 
         //register ourselves as listeners to events on the new input fields
-        //@TODO: set custom calculation methods here.
-        milesInput.addActionListener(this); //@TODO: this is the key to this lab
-        kilomInput.addActionListener(this); //@TODO: this is the key to this lab
+        milesInput.addActionListener(this);
+        kilomInput.addActionListener(this);
 
         //add the text fields to their panel
         input.add(milesInput);
@@ -57,7 +59,47 @@ public class distConverter extends JFrame implements ActionListener {
 
     //interface for event listener
     public void actionPerformed(ActionEvent e) {
-        System.out.printf("Data, '%s' received from: '%s'.\n", e.getActionCommand(), e.getSource());
+        double mi, km;
+        double answer;
+        if (e.getSource() == milesInput) {
+            mi = Double.parseDouble(e.getActionCommand());
+            answer = this.milesCalc(mi);
+        }
+        else if (e.getSource() == kilomInput) {
+            km = Double.parseDouble(e.getActionCommand());
+            answer = this.kilomCalc(km);
+        }
+        else {
+            //we snobbily reject the possibility that you can initiate anything
+            //from elsewhere
+            return;
+        }
+
+        System.out.printf("answer: %s\n", answer);
+    }
+
+    /**
+     * Convert kilometers to miles.
+     * @param double
+     *   Kilometers to be converted
+     * @return double
+     *   Miles, equivilent in distance to km
+     */
+    public double kilomCalc(double km) {
+        return 0; //@TODO: calculate!
+    }
+
+// 1 mile = 1.609344 km  //@TODO:!!!
+
+    /**
+     * Convert miles to kilometers.
+     * @param double
+     *   Miles to be converted
+     * @return double
+     *   Kilometers, equivilent in distance to mi
+     */
+    public double milesCalc(double mi) {
+        return 0; //@TODO: calculate!
     }
 
     //main
