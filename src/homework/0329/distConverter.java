@@ -14,7 +14,8 @@ import java.awt.BorderLayout;
 public class distConverter extends JFrame implements ActionListener {
     protected JTextField milesInput;
     protected JTextField kilomInput;
-    public static final kilometerInMile = 1.609344;
+    public static final double KILOMETER_IN_MILE = 1.609344;
+    public static final double MILE_IN_KILOMETER = 0.621371192;
 
     //default constrcutor
     public distConverter() {
@@ -87,7 +88,7 @@ public class distConverter extends JFrame implements ActionListener {
      *   Miles, equivilent in distance to km
      */
     public double kilomCalc(double km) {
-        return 0; //@TODO: calculate!
+        return MILE_IN_KILOMETER * km;
     }
 
 // 1 mile = 1.609344 km  //@TODO:!!!
@@ -100,7 +101,7 @@ public class distConverter extends JFrame implements ActionListener {
      *   Kilometers, equivilent in distance to mi
      */
     public double milesCalc(double mi) {
-        return kilometerInMile * mi; //@TODO: calculate!
+        return KILOMETER_IN_MILE * mi;
     }
 
     //main
