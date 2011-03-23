@@ -31,13 +31,18 @@ public class IceCream extends JFrame {
         vanilla = new JRadioButton("Vanilla", true);
         vanilla.setForeground(Color.white);
         vanilla.setBackground(Color.black);
-        
+
         choc = new JRadioButton("Chocolate", false);
         choc.setForeground(dark);
        
         straw = new JRadioButton("Strawberry", false);
         straw.setForeground(Color.red);
             
+        //button-group to associate radio buttons
+        flavors = new ButtonGroup();
+        flavors.add(vanilla);
+        flavors.add(choc);
+        flavors.add(straw);
 
       // Now do the toppings as check boxes, since we can pick more than one
         tops = new JLabel("Toppings");
