@@ -21,14 +21,17 @@ public class IceCream extends JFrame implements ItemListener {
         ms = new JTextField("Vanilla ",20);  // to match default flavor
         ms.setEditable(false); // The user can not populate
 
+        //
         //Do the flavors as radio buttons since we can pick only one
+        //
+        //create vanilla
         vanilla = new JRadioButton("Vanilla", true);
         vanilla.setForeground(Color.white);
         vanilla.setBackground(Color.black);
-
+        //create chocolate
         choc = new JRadioButton("Chocolate", false);
         choc.setForeground(dark);
-       
+        //create strawberry
         straw = new JRadioButton("Strawberry", false);
         straw.setForeground(Color.red);
             
@@ -55,10 +58,15 @@ public class IceCream extends JFrame implements ItemListener {
         this.add(cherry);
         this.add(mms);
 
-        //register listeners on radio buttons
+        //register listeners on flvaors (radio buttons)
         vanilla.addItemListener(this);
         choc.addItemListener(this);
         straw.addItemListener(this);
+
+        //register listeners on toppings (check boxes)
+        whip.addItemListener(this);
+        cherry.addItemListener(this);
+        mms.addItemListener(this);
 
         this.setSize(275, 150);
         this.setVisible(true);
@@ -67,17 +75,39 @@ public class IceCream extends JFrame implements ItemListener {
     //interface
     public void itemStateChanged(ItemEvent e) {
         //getItem()
-        String order = "";
-        if (vanilla.isSelected()) {
-            order = "Vanilla";
+        AbstractButton selectedButton = (AbstractButton) e.getItem();
+        String selected = selectedButton.getText();
+        if (e.getStateChange() == ItemEvent.SELECTED) {
+            System.out.printf("selected: %s\n", selected);
         }
-        else if (choc.isSelected()) {
-            order = "Chocolate";
-        }
-        else if (straw.isSelected()) {
-            order = "Strawberry";
+        else {
+            return;
         }
 
+        //change flavors:
+        String order = "";
+        if (vanilla.isSelected()) {
+            order = selected;
+        }
+        else if (choc.isSelected()) {
+            order = selected;
+        }
+        else if (straw.isSelected()) {
+            order = selected;
+        }
+
+        //change toppings:
+        if (whip.isSelected()) {
+            order += " w/" + selected;
+        }
+        else if (cherry.isSelected()) {
+            order += " w/" + selected;
+        }
+        else if (mms.isSelected()) {
+            order += " w/" + selected;
+        }
+
+        //update the text field
         ms.setText(order);
     }
   
