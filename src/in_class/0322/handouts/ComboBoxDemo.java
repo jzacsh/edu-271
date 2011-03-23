@@ -20,7 +20,7 @@ public class ComboBoxDemo extends JFrame {
 
   // Declare and create a description panel
   private DescriptionPanel descriptionPanel = new DescriptionPanel();
-  //@this is broken - go get the *.class file (only thing available) and add it to git index
+  //@TODO: this is broken - go get the *.class file (only thing available) and add it to git index
 
   // Create a combo box for selecting countries
   private JComboBox jcbo = new JComboBox(flagTitles);
