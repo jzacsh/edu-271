@@ -22,7 +22,7 @@ public class Multi extends JFrame
         colorList = new JList(colornames);
         colorList.setVisibleRowCount(5);
         colorList.setFixedCellHeight(15);
-        colorList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        colorList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         add(colorList);
         
 
@@ -49,10 +49,14 @@ public class Multi extends JFrame
         if (e.getSource() == copyit)
         {    
             String area;
-            if (colorList.getSelectedIndex() >=0 && colorList.getSelectedIndex() <= colornames.length)
-            {
-                copyArea.setText ( colornames [colorList.getSelectedIndex()] );
+            Object selected_colors[] = colorList.getSelectedValues();
+            for (int k = 0; k < selected_colors.length; k++) {
+                copyArea.append("\n" + selected_colors[k].toString());
             }
+        //  if (colorList.getSelectedIndex() >=0 && colorList.getSelectedIndex() <= colornames.length)
+        //  {
+        //      copyArea.setText ( colornames [colorList.getSelectedIndex()] );
+        //  }
         }
     }
     
