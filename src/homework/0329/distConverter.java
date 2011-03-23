@@ -65,19 +65,19 @@ public class distConverter extends JFrame implements ActionListener {
         double answer;
         if (e.getSource() == milesInput) {
             mi = Double.parseDouble(e.getActionCommand());
-            answer = this.milesCalc(mi);
+            km = this.milesCalc(mi);
+            kilomInput.setText(Double.toString(km));
         }
         else if (e.getSource() == kilomInput) {
             km = Double.parseDouble(e.getActionCommand());
-            answer = this.kilomCalc(km);
+            mi = this.kilomCalc(km);
+            milesInput.setText(Double.toString(mi));
         }
         else {
             //we snobbily reject the possibility that you can initiate anything
             //from elsewhere
             return;
         }
-
-        System.out.printf("answer: %s\n", answer);
     }
 
     /**
@@ -90,8 +90,6 @@ public class distConverter extends JFrame implements ActionListener {
     public double kilomCalc(double km) {
         return MILE_IN_KILOMETER * km;
     }
-
-// 1 mile = 1.609344 km  //@TODO:!!!
 
     /**
      * Convert miles to kilometers.
