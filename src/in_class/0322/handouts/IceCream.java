@@ -5,7 +5,7 @@ import java.awt.event.*;
 // A simple user interface that consists of radio buttons for the type of ice cream
 // and check boxes for the toppings for the ice cream
 //
-public class IceCream extends JFrame {
+public class IceCream extends JFrame implements ItemListener {
     private JRadioButton vanilla, choc, straw;
     private JTextField ms;
     private ButtonGroup flavors;
@@ -14,20 +14,14 @@ public class IceCream extends JFrame {
     private String icecream_picked = "Vanilla ";
 
     public IceCream() {
-      
         super("Ice Cream");
-
-        
-        setLayout(new FlowLayout());
+        this.setLayout(new FlowLayout());
 
         Color dark = new Color(63,29,10);          // brownish
         ms = new JTextField("Vanilla ",20);  // to match default flavor
         ms.setEditable(false); // The user can not populate
 
-
-
-     // Do the flavors as radio buttons since we can pick only one
-
+        //Do the flavors as radio buttons since we can pick only one
         vanilla = new JRadioButton("Vanilla", true);
         vanilla.setForeground(Color.white);
         vanilla.setBackground(Color.black);
@@ -44,29 +38,47 @@ public class IceCream extends JFrame {
         flavors.add(choc);
         flavors.add(straw);
 
-      // Now do the toppings as check boxes, since we can pick more than one
+        //Now do the toppings as check boxes, since we can pick more than one
         tops = new JLabel("Toppings");
         whip = new JCheckBox("Whipped Cream");
-      
         cherry = new JCheckBox("Cherry");
-      
         mms = new JCheckBox("M&Ms");
         
+        //Now place the stuff on the screen
+        this.add(vanilla); // the radio buttons
+        this.add(choc);
+        this.add(straw);
+        this.add(ms); // a text box to display the results
 
-    // Now place the stuff on the screen
+        this.add(tops); // a label
+        this.add(whip); // the check boxes
+        this.add(cherry);
+        this.add(mms);
 
-        add(vanilla); // the radio buttons
-        add(choc);
-        add(straw);
-        add(ms); // a text box to display the results
+        //register listeners on radio buttons
+        vanilla.addItemListener(this);
+        choc.addItemListener(this);
+        straw.addItemListener(this);
 
-        add(tops); // a label
-        add(whip); // the check boxes
-        add(cherry);
-        add(mms);
+        this.setSize(275, 150);
+        this.setVisible(true);
+    }
 
-        setSize(275, 150);
-        setVisible(true);
+    //interface
+    public void itemStateChanged(ItemEvent e) {
+        //getItem()
+        String order = "";
+        if (vanilla.isSelected()) {
+            order = "Vanilla";
+        }
+        else if (choc.isSelected()) {
+            order = "Chocolate";
+        }
+        else if (straw.isSelected()) {
+            order = "Strawberry";
+        }
+
+        ms.setText(order);
     }
   
     public static void main(String args[]) {
