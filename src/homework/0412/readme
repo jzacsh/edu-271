@@ -1,0 +1,16 @@
+lab 9
+pg 567, #16 and #16.3
+
+16.1
+(Converting applications to applets)
+Convert Listing 15.2 [1], ButtonDemo.java, into an applet
+
+[1] See attached ./ButtonDemo.java
+
+
+16.3
+(Enabling applets to run standalone)
+Rewrite the LoanApplet in Listing 16.1 [2], LoanApplet.java, to enable it to
+run as an application as well as an applet.
+
+[2] See attached ./LoanApplet.java
