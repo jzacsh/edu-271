@@ -36,7 +36,9 @@ public class Icecreamcombo extends JFrame
         this.add(topps_Label);
         // Create a JListBox for the toppings
         toppings = new JList(toppinglist);
-        this.add(toppings);
+        toppings.setVisibleRowCount(3);
+        toppings.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+        this.add(new JScrollPane(toppings));
         
         order = new JTextField(20);
         order.setEditable(false);
