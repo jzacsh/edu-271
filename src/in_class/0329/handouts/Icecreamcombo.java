@@ -10,7 +10,7 @@ public class Icecreamcombo extends JFrame
     JTextField order;
     JLabel topps_Label;
     String flavorlist[] = {"Vanilla" , "Chocolate", "Strawberry", "Coffee" };
-    String toppinglist[] = {"Whipped Cream", "M&Ms", "Cherry", "Sprinkles" };
+    String toppinglist[] = {"Whipped Cream", "M&Ms", "Cherry", "Sprinkles", "Cashews" };
     JComboBox flavors;
     JList toppings;
     String icecream_picked = "";
@@ -26,6 +26,7 @@ public class Icecreamcombo extends JFrame
         // Create the JComboBox to select the flavors
         flavors = new JComboBox(flavorlist);
         this.add(flavors);
+        flavors.setMaximumRowCount(3);
         FlavorHandler flavor_handler = new FlavorHandler();
             
         // add the listeners
@@ -34,7 +35,8 @@ public class Icecreamcombo extends JFrame
         topps_Label = new JLabel("Toppings");
         this.add(topps_Label);
         // Create a JListBox for the toppings
-        
+        toppings = new JList(toppinglist);
+        this.add(toppings);
         
         order = new JTextField(20);
         order.setEditable(false);
