@@ -27,7 +27,7 @@ public class Icecreamcombo extends JFrame
         
             
         // add the listeners
-        
+        flavors.addActionListener(flavor_handler);
         
         topps_Label = new JLabel("Toppings");
         add(topps_Label);
