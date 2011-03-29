@@ -24,21 +24,22 @@ public class Icecreamcombo extends JFrame
         
         icecream_picked = "Vanilla";
         // Create the JComboBox to select the flavors
-        
+        flavors = new JComboBox(flavorlist);
+        this.add(flavors);
+        FlavorHandler flavor_handler = new FlavorHandler();
             
         // add the listeners
         flavors.addActionListener(flavor_handler);
         
         topps_Label = new JLabel("Toppings");
-        add(topps_Label);
+        this.add(topps_Label);
         // Create a JListBox for the toppings
-        
         
         
         order = new JTextField(20);
         order.setEditable(false);
         order.setText( icecream_picked );
-        add(order);
+        this.add(order);
 
         setSize(300,200);
         setVisible(true);
@@ -49,7 +50,8 @@ public class Icecreamcombo extends JFrame
         public void actionPerformed(ActionEvent e)
         {
             // The flavor selected
-            ;
+            icecream_picked = (String) flavors.getSelectedItem();
+            order.setText(icecream_picked);
         }
 
     }
@@ -70,5 +72,6 @@ public class Icecreamcombo extends JFrame
     {
         Icecreamcombo ad = new Icecreamcombo();
         ad.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        ad.setLocationRelativeTo(null);
     }
 }
