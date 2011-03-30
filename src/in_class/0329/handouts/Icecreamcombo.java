@@ -13,7 +13,7 @@ public class Icecreamcombo extends JFrame
     String toppinglist[] = {"Whipped Cream", "M&Ms", "Cherry", "Sprinkles", "Cashews" };
     JComboBox flavors;
     JList toppings;
-    String icecream_picked = "";
+    String flavor_picked = "", topping_picked = "";
 
     public Icecreamcombo()
     {
@@ -22,7 +22,7 @@ public class Icecreamcombo extends JFrame
         setLayout(new FlowLayout()); // One component after another from left to right
         // Now create some items to display to the user
         
-        icecream_picked = "Vanilla";
+        flavor_picked = "Vanilla";
         // Create the JComboBox to select the flavors
         flavors = new JComboBox(flavorlist);
         this.add(flavors);
@@ -39,10 +39,13 @@ public class Icecreamcombo extends JFrame
         toppings.setVisibleRowCount(3);
         toppings.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         this.add(new JScrollPane(toppings));
+
+        ToppingHandler topping_handler = new ToppingHandler();
+        toppings.addListSelectionListener(topping_handler);
         
         order = new JTextField(20);
         order.setEditable(false);
-        order.setText( icecream_picked );
+        order.setText( flavor_picked );
         this.add(order);
 
         setSize(300,200);
@@ -54,8 +57,8 @@ public class Icecreamcombo extends JFrame
         public void actionPerformed(ActionEvent e)
         {
             // The flavor selected
-            icecream_picked = (String) flavors.getSelectedItem();
-            order.setText(icecream_picked);
+            flavor_picked = (String) flavors.getSelectedItem();
+            order.setText(flavor_picked + " " + topping_picked);
         }
 
     }
@@ -66,6 +69,13 @@ public class Icecreamcombo extends JFrame
             // Get the list of the selected toppings
             //int selected[] = toppings.getSelectedIndices();
             Object selected[] = toppings.getSelectedValues();
+            topping_picked = "";
+            String _pre, flavor = order.getText();
+            for (int i = 0; i < selected.length; i++) {
+                _pre = ( i > 0 ) ? " " : "";
+                topping_picked += _pre + selected[i];
+            }
+            order.setText(flavor_picked + " " + topping_picked);
 
             // Use a for loop to obtain the names of the selected items
             
