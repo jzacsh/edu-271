@@ -23,7 +23,7 @@ public class celtofah1 extends JFrame
         super ("Celsius to Fahrenheit");
 
         BorderLayout bdLayout = new BorderLayout();
-        setLayout(bdLayout);
+        this.setLayout(bdLayout);
 
         pn1 = new JPanel();
         pn2 = new JPanel();
@@ -40,11 +40,11 @@ public class celtofah1 extends JFrame
 
         anslabel.addActionListener(this);
 
-        add(pn1,BorderLayout.NORTH);
-        add(pn2,BorderLayout.SOUTH);
+        this.add(pn1,BorderLayout.NORTH);
+        this.add(pn2,BorderLayout.SOUTH);
               
-        setSize(350,150);
-        setVisible(true);
+        this.setSize(350,150);
+        this.setVisible(true);
 }
     public void actionPerformed(ActionEvent e)
     {
@@ -63,5 +63,6 @@ public class celtofah1 extends JFrame
         celtofah1 app = new celtofah1();
 
         app.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        app.setLocationRelativeTo(null);
     }
 }
