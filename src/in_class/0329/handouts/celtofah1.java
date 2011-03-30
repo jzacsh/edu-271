@@ -8,10 +8,10 @@ import javax.swing.event.*;
 import java.text.DecimalFormat;
 
 public class celtofah1 extends JFrame
-    implements ActionListener
+    implements ChangeListener
 
  {
-    private JTextField anslabel; 
+    private JSlider anslabel;
     private JTextField ans;
     private JLabel lab_cel;
     
@@ -29,7 +29,7 @@ public class celtofah1 extends JFrame
         pn2 = new JPanel();
 
         lab_cel = new JLabel("Enter Degrees in Celsius ");
-        anslabel = new JTextField(10);
+        anslabel = new JSlider();
                 
         ans = new JTextField(10);
         ans.setEditable(false);
@@ -38,7 +38,7 @@ public class celtofah1 extends JFrame
         pn1.add(anslabel);
         pn2.add(ans);
 
-        anslabel.addActionListener(this);
+        anslabel.addChangeListener(this);
 
         this.add(pn1,BorderLayout.NORTH);
         this.add(pn2,BorderLayout.SOUTH);
@@ -46,13 +46,13 @@ public class celtofah1 extends JFrame
         this.setSize(350,150);
         this.setVisible(true);
 }
-    public void actionPerformed(ActionEvent e)
+    public void stateChanged(ChangeEvent e)
     {
         
         if (e.getSource() == anslabel)
         {
                 DecimalFormat twodig = new DecimalFormat("0.0");
-                float cel = Float.parseFloat( anslabel.getText() );
+                float cel = anslabel.getValue();
                 double fah = 9.0/5 * cel + 32;
                 ans.setText(twodig.format(fah) + " fahrenheit");
         }
