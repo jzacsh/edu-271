@@ -25,9 +25,9 @@ public class ScrollBarDemo extends JFrame {
   public ScrollBarDemo() {
     // Add scroll bars and message panel to the frame
     setLayout(new BorderLayout());
-    add(messagePanel, BorderLayout.CENTER);
-    add(jscbVert, BorderLayout.EAST);
-    add(jscbHort, BorderLayout.SOUTH);
+    this.add(messagePanel, BorderLayout.CENTER);
+    this.add(jscbVert, BorderLayout.EAST);
+    this.add(jscbHort, BorderLayout.SOUTH);
 
     // Register listener for the scroll bars
     jscbHort.addAdjustmentListener(new AdjustmentListener() {
