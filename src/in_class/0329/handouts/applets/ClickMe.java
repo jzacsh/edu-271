@@ -8,7 +8,7 @@ public class ClickMe extends JApplet {
     private Container c;
     private String msg = "Counting ups and downs";
     private int up = 0, down = 0;
-           
+
     public void init() {
         c = getContentPane();
         BorderLayout bdLayout = new BorderLayout();
@@ -41,4 +41,14 @@ public class ClickMe extends JApplet {
         public void mousePressed(MouseEvent e) { app.doDown(); }
         public void mouseReleased(MouseEvent e) { app.doUp(); }
     }    
+
+    public static void main(String args[]) {
+        JFrame standalone = new JFrame("Click Me");
+        standalone.setSize(300, 300);
+        standalone.setLocationRelativeTo(null);
+        standalone.setVisible(true);
+        ClickMe clickme = new ClickMe();
+        standalone.add(clickme);
+        clickme.init();
+    }
 }
