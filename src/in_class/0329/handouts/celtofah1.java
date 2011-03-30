@@ -30,6 +30,14 @@ public class celtofah1 extends JFrame
 
         lab_cel = new JLabel("Enter Degrees in Celsius ");
         anslabel = new JSlider();
+        anslabel.setMinimum(-20);
+        anslabel.setMaximum(100);
+
+        anslabel.setPaintLabels(true);
+        anslabel.setPaintTrack(true);
+        anslabel.setPaintTicks(true);
+        anslabel.setMajorTickSpacing(10);
+        anslabel.setMinorTickSpacing(5);
                 
         ans = new JTextField(10);
         ans.setEditable(false);
