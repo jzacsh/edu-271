@@ -28,6 +28,8 @@ public class ScrollBarDemo extends JFrame {
     this.add(messagePanel, BorderLayout.CENTER);
     this.add(jscbVert, BorderLayout.EAST);
     this.add(jscbHort, BorderLayout.SOUTH);
+    messagePanel.setXCoordinate(jscbHort.getValue());
+    jscbVert.setValue(30);
 
     // Register listener for the scroll bars
     jscbHort.addAdjustmentListener(new AdjustmentListener() {
