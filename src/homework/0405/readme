@@ -6,7 +6,7 @@ foreground color for a label, as shown in Figure 15.47. Three horizontal scroll
 bars are used for selecting the red, green, and blue components of the color.
 Use a title border [1] on the panel that holds the scroll bars.
 
-    [1] ie.: setTitle(new TitledBorder("Your Title Here"));
+    [1] ie.: setBorder(new TitledBorder("Your Title Here"));
 
     Figure 15.47
 
