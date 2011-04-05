@@ -6,13 +6,13 @@ import java.awt.*;
 public class ArrayExp extends Exception
    
 {
-	
-	public ArrayExp()
-	{
-		super("Duplicate element");
-	}
-	public ArrayExp(String s)
-	{
-		super(s);
-	}
+    
+    public ArrayExp()
+    {
+        super("Duplicate element");
+    }
+    public ArrayExp(String s)
+    {
+        super(s);
+    }
 }
