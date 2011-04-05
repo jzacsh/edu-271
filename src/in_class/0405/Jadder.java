@@ -9,7 +9,7 @@ import java.net.*;
 import java.applet.*;
 
 public class Jadder extends JFrame
-  implements ActionListener 
+  implements ActionListener
 {
     JTextField text1, text2, answertext;
     JLabel pluslabel, info;
@@ -17,7 +17,7 @@ public class Jadder extends JFrame
 
     public Jadder()
     {
-        
+
         setLayout(new FlowLayout()); // One component after another from left to right
 
         // Now create some items to display to the user
@@ -29,15 +29,15 @@ public class Jadder extends JFrame
 
         pluslabel = new JLabel("+");
         add(pluslabel);
-    
+
         text2 = new JTextField(10);
         add(text2);
-        
+
         text2.addActionListener(this);
 
         button1 = new JButton("=");
         add(button1);
-    
+
         // Subscribe for when the user clicks this
         button1.addActionListener(this);
 
@@ -49,8 +49,8 @@ public class Jadder extends JFrame
     }
 
     // Listen for when the user presses the button
-    
-    
+
+
     public void actionPerformed(ActionEvent e)
     {
         if (e.getSource() == text2)
@@ -66,10 +66,10 @@ public class Jadder extends JFrame
             // convert the answer to a string and display
             answertext.setText(String.valueOf(sum));
             //answertext.setText(e.getActionCommand());
-            
+
         }
     }
-    
+
     public static void main(String[] args)
     {
         Jadder ad = new Jadder();
