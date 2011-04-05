@@ -15,15 +15,22 @@ public class LabColorPicker extends JFrame {
     public LabColorPicker() {
         this.setLayout(new BorderLayout());
 
+        JTextField mainInstruction = new JTextField("Show Colors");
+        mainInstruction.setEditable(false);
+        this.add(mainInstruction, BorderLayout.NORTH);
+
+        //main panel on bottom
         JPanel pickerForm = new JPanel();
         pickerForm.setLayout(new GridLayout());
         pickerForm.setBorder(new TitledBorder("Choose Colors"));
         this.add(pickerForm, BorderLayout.CENTER);
 
+        //labels; inner left-hand side-bar
         JPanel colorLabels = new JPanel();
         colorLabels.setLayout(new GridLayout());
         this.add(colorLabels, BorderLayout.WEST);
 
+        //sliders; inner right-hand main-area
         JPanel colorPickers = new JPanel();
         colorPickers.setLayout(new GridLayout());
         this.add(colorPickers, BorderLayout.CENTER);
