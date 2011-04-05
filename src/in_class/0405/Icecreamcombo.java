@@ -18,21 +18,25 @@ public class Icecreamcombo extends JFrame
     public Icecreamcombo()
     {
         super("Ice Cream");
-        
+
         setLayout(new FlowLayout()); // One component after another from left to right
         // Now create some items to display to the user
-        
+
+        ImageIcon icecream = new ImageIcon("./icecream_new.jpg");
+        JLabel ice_label = new JLabel(icecream);
+        this.add(ice_label);
+
         icecream_picked = "Vanilla";
         // Create the JComboBox to select the flavors
         flavors = new JComboBox(flavorlist);
-        add ( flavors ); // place on screen    
+        add ( flavors ); // place on screen
         flavors.setMaximumRowCount(2);
         //flavors.setEditable(true);
         FlavorHandler flavor_handler = new FlavorHandler();
 
         // add the listeners
         flavors.addActionListener( flavor_handler ); //register
-        
+
         topps_Label = new JLabel("Toppings");
         add(topps_Label);
         // Create a JListBox for the toppings
@@ -52,7 +56,7 @@ public class Icecreamcombo extends JFrame
         setSize(300,200);
         setVisible(true);
     }
-    
+
     class FlavorHandler implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
@@ -75,7 +79,7 @@ public class Icecreamcombo extends JFrame
             // Use a for loop to obtain the names of the selected items
             for (int k = 0; k < selected.length ; k++)
             {
-                toppings_picked += selected[k] + " ";    
+                toppings_picked += selected[k] + " ";
             }
             order.setText( icecream_picked + toppings_picked );
         }
