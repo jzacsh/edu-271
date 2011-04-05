@@ -8,16 +8,15 @@ import javax.swing.*;
 import java.net.*;
 import java.applet.*;
 
-public class Jadder extends JFrame
+public class Jadder extends JApplet
   implements ActionListener
 {
     JTextField text1, text2, answertext;
     JLabel pluslabel, info;
     JButton button1;
 
-    public Jadder()
+    public void init()
     {
-
         setLayout(new FlowLayout()); // One component after another from left to right
 
         // Now create some items to display to the user
@@ -72,7 +71,15 @@ public class Jadder extends JFrame
 
     public static void main(String[] args)
     {
-        Jadder ad = new Jadder();
-        ad.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+
+        Jadder app = new Jadder();
+        frame.add(app);
+        app.init();
+
+        frame.setSize(600, 150);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
     }
 }
