@@ -36,7 +36,11 @@ public class LabColorPicker extends JFrame {
 
         //sliders; inner right-hand main-area
         JPanel colorPickers = new JPanel();
-        colorPickers.setLayout(new GridLayout());
+        colorPickers.setLayout(new GridLayout(3, 1));
+        JLabel ban = new JLabel("Banner");
+        ban.setForeground(Color.yellow);
+        JColorChooser picker = new JColorChooser(ban.getForeground());
+        colorPickers.add(picker);
         this.add(colorPickers, BorderLayout.CENTER);
     }
 
