@@ -15,6 +15,8 @@ public class LabColorPicker extends JFrame {
     public static final int COLOR_MIN = 0;
     public static final int COLOR_MAX = 255;
     public static final int COLOR_INIT = 0;
+
+    private JTextField colorPane;
     private JSlider pickerRed;
     private JSlider pickerGreen;
     private JSlider pickerBlue;
@@ -26,9 +28,11 @@ public class LabColorPicker extends JFrame {
         //
         //main label for window
         //
-        JTextField mainInstruction = new JTextField("Show Colors");
-        mainInstruction.setEditable(false);
-        this.add(mainInstruction, BorderLayout.NORTH);
+        colorPane = new JTextField("Color Sampler");
+        colorPane.setEditable(false);
+        colorPane.setHorizontalAlignment(JTextField.CENTER);
+        colorPane.setFont(new Font("MonoSpaced", Font.BOLD, 18));
+        this.add(colorPane, BorderLayout.NORTH);
 
         //
         //main panel on bottom
@@ -97,7 +101,7 @@ public class LabColorPicker extends JFrame {
             int R = pickerRed.getValue();
             int G = pickerGreen.getValue();
             int B = pickerBlue.getValue();
-            System.out.printf("colors: RGB(%s,%s,%s)\n", R, G, B);
+            colorPane.setForeground(new Color(R, G, B));
         }
     }
 
