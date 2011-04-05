@@ -53,14 +53,17 @@ public class LabColorPicker extends JFrame {
         //
         JPanel colorPickers = new JPanel();
         colorPickers.setLayout(new GridLayout(3, 1));
+
         //R: red slider
         pickerRed = createColorSlider();
         this.configPickingSlider(pickerRed);
         colorPickers.add(pickerRed);
+
         //G: green slider
         pickerGreen = createColorSlider();
         this.configPickingSlider(pickerGreen);
         colorPickers.add(pickerGreen);
+
         //B: blue slider
         pickerBlue = createColorSlider();
         this.configPickingSlider(pickerBlue);
@@ -71,7 +74,7 @@ public class LabColorPicker extends JFrame {
     }
 
     /**
-     * Helper function to make above code more readable.
+     * Helper (DRY) function to consistently create color sliders.
      */
     public JSlider createColorSlider() {
         return new JSlider(JSlider.HORIZONTAL, COLOR_MIN, COLOR_MAX,
@@ -79,7 +82,7 @@ public class LabColorPicker extends JFrame {
     }
 
     /**
-     * Helper function to make above code more readable.
+     * Helper (DRY) function to consistently configure sliders.
      */
     public void configPickingSlider(JSlider picker) {
         picker.setMinorTickSpacing(5);
