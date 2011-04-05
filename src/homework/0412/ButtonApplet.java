@@ -9,22 +9,25 @@ import javax.swing.*;
 public class ButtonApplet extends JApplet {
     //Create a panel for displaying message
     protected MessagePanel messagePanel = new MessagePanel("Welcome ot Java");
+    //above requires compiled MessagePanel example from previous handout
 
     //declare two buttons to move the message left and right
     private JButton jbtLeft = new JButton("<=");
     private JButton jbtRight = new JButton("=>");
 
-    public static void init(String[] args) {
-        ButtonApplet frame = new ButtonApplet();
-
+    public static void main(String[] args) {
+        JFrame frame = new JFrame();
         frame.setTitle("ButtonApplet");
         frame.setLocationRelativeTo(null); //center the frame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(250, 100);
         frame.setVisible(true);
+        ButtonApplet japp = new ButtonApplet();
+        frame.add(japp);
+        japp.init();
     }
 
-    public void init {
+    public void init() {
         //set the background color of messagePanel
         messagePanel.setBackground(Color.white);
 
@@ -54,12 +57,12 @@ public class ButtonApplet extends JApplet {
         this.add(jpButtons, BorderLayout.SOUTH);
 
         //register anonymous listeners with the buttons
-        jbtLeft.addActionListener(new ActionListener{
+        jbtLeft.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 messagePanel.moveLeft();
             }
         });
-        jbtRight.addActionListener(new ActionListener{
+        jbtRight.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 messagePanel.moveRight();
             }
