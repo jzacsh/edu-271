@@ -11,6 +11,10 @@ import javax.swing.border.TitledBorder;
  */
 
 public class LabColorPicker extends JFrame {
+    static final int COLOR_MIN = 0;
+    static final int COLOR_MAX = 255;
+    static final int COLOR_INIT = 0;
+
     //default constructor
     public LabColorPicker() {
         this.setLayout(new BorderLayout());
@@ -37,10 +41,18 @@ public class LabColorPicker extends JFrame {
         //sliders; inner right-hand main-area
         JPanel colorPickers = new JPanel();
         colorPickers.setLayout(new GridLayout(3, 1));
-        JLabel ban = new JLabel("Banner");
-        ban.setForeground(Color.yellow);
-        JColorChooser picker = new JColorChooser(ban.getForeground());
-        colorPickers.add(picker);
+        //R: red slider
+        JSlider pickerRed = new JSlider(JSlider.HORIZONTAL, COLOR_MIN,
+                COLOR_MAX, COLOR_INIT);
+        colorPickers.add(pickerRed);
+        //G: green slider
+        JSlider pickerGreen = new JSlider(JSlider.HORIZONTAL, COLOR_MIN,
+                COLOR_MAX, COLOR_INIT);
+        colorPickers.add(pickerGreen);
+        //B: blue slider
+        JSlider pickerBlue = new JSlider(JSlider.HORIZONTAL, COLOR_MIN,
+                COLOR_MAX, COLOR_INIT);
+        colorPickers.add(pickerBlue);
         this.add(colorPickers, BorderLayout.CENTER);
     }
 
