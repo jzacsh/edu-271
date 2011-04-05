@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.event.*;
 
-public class Icecreamcombo extends JFrame
+public class Icecreamcombo extends JApplet
 {
     JTextField order;
     JLabel topps_Label;
@@ -15,10 +15,8 @@ public class Icecreamcombo extends JFrame
     JList toppings;
     String icecream_picked = "";
 
-    public Icecreamcombo()
+    public void init()
     {
-        super("Ice Cream");
-
         setLayout(new FlowLayout()); // One component after another from left to right
         // Now create some items to display to the user
 
@@ -52,9 +50,6 @@ public class Icecreamcombo extends JFrame
         order.setEditable(false);
         order.setText( icecream_picked );
         add(order);
-
-        setSize(300,200);
-        setVisible(true);
     }
 
     class FlavorHandler implements ActionListener
@@ -87,7 +82,14 @@ public class Icecreamcombo extends JFrame
     }
     public static void main(String[] args)
     {
-        Icecreamcombo ad = new Icecreamcombo();
-        ad.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        Icecreamcombo japp = new Icecreamcombo();
+        JFrame frame = new JFrame("Ice Cream");
+
+        frame.add(japp);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setSize(900, 500);
+        frame.setVisible(true);
+        japp.init();
     }
 }
