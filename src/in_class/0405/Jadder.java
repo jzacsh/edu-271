@@ -68,6 +68,7 @@ public class Jadder extends JApplet
             }
             catch (NumberFormatException error) {
                 System.out.printf("Don't be Stoopiii_d...\n");
+                answertext.setText("Invalid");
             }
 
         }
