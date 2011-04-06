@@ -36,7 +36,7 @@ public class LoanApplet extends JApplet {
         p1.add(new JLabel("Annual Interest Rate"));
         p1.add(jftAnnualInterestRate);
         p1.add(new JLabel("Number of Years"));
-        p1.add(jftNumberofYears);
+        p1.add(jftNumberOfYears);
         p1.add(new JLabel("Loan Amount"));
         p1.add(jftLoanAmount);
         p1.add(new JLabel("Monthly Payment"));
@@ -54,7 +54,7 @@ public class LoanApplet extends JApplet {
         this.add(p2, BorderLayout.SOUTH);
 
         //register listener
-        jbtComputeLoan.addActionListner(new ButtonListener());
+        jbtComputeLoan.addActionListener(new ButtonListener());
     }
 
     /** handle the compute payment button **/
@@ -72,5 +72,18 @@ public class LoanApplet extends JApplet {
             jftMonthlyPayment.setText(String.format("%.2f", loan.getMonthlyPayment()));
             jftTotalPayment.setText(String.format("%.2f", loan.getTotalPayment()));
         }
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame();
+
+        LoanApplet app = new LoanApplet();
+        frame.add(app);
+
+        frame.setVisible(true);
+        frame.setSize(300, 150);
+        frame.setLocationRelativeTo(null);
+
+        app.init();
     }
 }
