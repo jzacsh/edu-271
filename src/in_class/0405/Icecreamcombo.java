@@ -91,15 +91,13 @@ public class Icecreamcombo extends JApplet
     {
         JFrame frame = new JFrame("Ice Cream");
 
+        Icecreamcombo japp = new Icecreamcombo();
+        frame.add(japp);
+        japp.init();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         frame.setSize(900, 500);
-
-        Icecreamcombo japp = new Icecreamcombo();
-        frame.add(japp);
-
-        japp.init();
     }
 }
