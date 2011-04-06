@@ -1,6 +1,7 @@
 // Icecream - select flavors using combo box
 // toppings - select using list box - multiple selection
 import javax.swing.*;
+import java.net.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.event.*;
@@ -20,7 +21,8 @@ public class Icecreamcombo extends JApplet
         setLayout(new FlowLayout()); // One component after another from left to right
         // Now create some items to display to the user
 
-        ImageIcon icecream = new ImageIcon("./icecream_new.jpg");
+        URL iceurl = this.getClass().getResource("icecream_new.jpg");
+        ImageIcon icecream = new ImageIcon(iceurl);
         JLabel ice_label = new JLabel(icecream);
         this.add(ice_label);
 
@@ -82,14 +84,17 @@ public class Icecreamcombo extends JApplet
     }
     public static void main(String[] args)
     {
-        Icecreamcombo japp = new Icecreamcombo();
         JFrame frame = new JFrame("Ice Cream");
 
-        frame.add(japp);
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        frame.setSize(900, 500);
         frame.setVisible(true);
+        frame.setSize(900, 500);
+
+        Icecreamcombo japp = new Icecreamcombo();
+        frame.add(japp);
+
         japp.init();
     }
 }
