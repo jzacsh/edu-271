@@ -56,15 +56,19 @@ public class Jadder extends JApplet
         {
             answertext.setText("Use the equal button");
         }
-        if (e.getSource() == button1)
-        {
-            // convert from text to integer and add
-            int sum = Integer.parseInt(text1.getText()) +
-                Integer.parseInt(text2.getText());
+        if (e.getSource() == button1) {
+            try {
+                // convert from text to integer and add
+                int sum = Integer.parseInt(text1.getText()) +
+                    Integer.parseInt(text2.getText());
 
-            // convert the answer to a string and display
-            answertext.setText(String.valueOf(sum));
-            //answertext.setText(e.getActionCommand());
+                // convert the answer to a string and display
+                answertext.setText(String.valueOf(sum));
+                //answertext.setText(e.getActionCommand());
+            }
+            catch (NumberFormatException error) {
+                System.out.printf("Don't be Stoopiii_d...\n");
+            }
 
         }
     }
