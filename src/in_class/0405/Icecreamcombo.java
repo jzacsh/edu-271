@@ -1,10 +1,11 @@
 // Icecream - select flavors using combo box
 // toppings - select using list box - multiple selection
 import javax.swing.*;
-import java.net.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.event.*;
+import java.applet.*;
+import java.net.*;
 
 public class Icecreamcombo extends JApplet
 {
@@ -25,6 +26,10 @@ public class Icecreamcombo extends JApplet
         ImageIcon icecream = new ImageIcon(iceurl);
         JLabel ice_label = new JLabel(icecream);
         this.add(ice_label);
+
+        URL sound = getClass().getResource("godfather.mid");
+        AudioClip godfatherclip = Applet.newAudioClip(sound);
+        godfatherclip.play();
 
         icecream_picked = "Vanilla";
         // Create the JComboBox to select the flavors
