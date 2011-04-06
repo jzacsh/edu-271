@@ -67,6 +67,9 @@ public class Jadder extends JApplet
                 //answertext.setText(e.getActionCommand());
             }
             catch (NumberFormatException error) {
+                URL scold = getClass().getResource("scream.aiff");
+                AudioClip scream = Applet.newAudioClip(scold);
+                scream.play();
                 System.out.printf("Don't be Stoopiii_d...\n");
                 answertext.setText("Invalid");
             }
