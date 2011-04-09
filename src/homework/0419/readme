@@ -1,2 +1,28 @@
 lab 10
 pg 602, # 17.3
+
+(ArrayIndexOutBoundsException) Write a program that meets the following
+requirements:
+- create an array with one hundred randomly chosen integers.
+- create a text field to enter an array index and another text field to
+  display the array element at the specified index (See Figure 17.12).
+- create a "Show Element" button to cause the array element to be dislayed. If
+  the specified index is out of bounds, display the message "Out of Bound".
+
+  Figure 17.12:
+    The program displays the array element at the specified index or displays
+    the message "Out of Bound" if the index is out of bounds.
+
+  +---------------------------------------+
+  | Exercise17_3: ShowError        _ O X  |
+  |---------------------------------------|
+  |                                       |
+  | Array Index       [________________]  |
+  |                                       |
+  | Array Element     [  Out of Bound  ]  |
+  |                                       |
+  | ____________________________________  |
+  | |                                  |  |
+  | |          SHOW ELEMENT            |  |
+  | |__________________________________|  |
+  +---------------------------------------+
