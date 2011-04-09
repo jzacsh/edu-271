@@ -1,2 +1,7 @@
 lab 11
 pg 633, #18.3
+
+(Summing all integers in a binary data file)
+Suppose a binary data file named Exercise18_3.dat has been created using
+writeInt(int) in DataOutputStream. The file contains an unspecified number of
+integers. Write a program to find the total of integers.
