@@ -13,7 +13,19 @@ Create an applet that displays a flag rising up as shown in Figure 14.20 [2].
 As the national flag rises, play the national anthem. (you may use a flag image
 and anthem audio file from Listing 16.13 [3]).
 
-[2] Figure 14.20
-@TODO
+[2]
+Figure 14.20
+  A flag is rising upward
+
++-----------------------+ +-----------------------+ +-----------------------+
+| Exercise14_14   _ O X | | Exercise14_14   _ O X | | Exercise14_14   _ O X |
+|-----------------------| |-----------------------| |-----------------------|
+|                       | |                       | | +-----+               |
+|                       | |                       | | | usa |               |
+|                       | | +-----+               | | +-----+               |
+| +-----+               | | | usa |               | |                       |
+| | usa |               | | +-----+               | |                       |
+| +-----+               | |                       | |                       |
++-----------------------+ +-----------------------+ +-----------------------+
 
 [3] Listing 16.13 is attached as ./ImageAudioAnimation.java
