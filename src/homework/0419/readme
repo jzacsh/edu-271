@@ -8,6 +8,7 @@ requirements:
   display the array element at the specified index (See Figure 17.12).
 - create a "Show Element" button to cause the array element to be dislayed. If
   the specified index is out of bounds, display the message "Out of Bound".
+- also make sure to catch "NumberFormatException"
 
   Figure 17.12:
     The program displays the array element at the specified index or displays
