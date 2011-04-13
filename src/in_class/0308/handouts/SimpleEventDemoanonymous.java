@@ -10,10 +10,10 @@ public class SimpleEventDemoanonymous extends JFrame {
     add(jbtOK);
 
      jbtOK.addActionListener(
-    	 new ActionListener() {
-    	 public void actionPerformed(ActionEvent e) {
-    		System.out.println("It is OK");
-    	}
+         new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            System.out.println("It is OK");
+        }
      }
      );
   

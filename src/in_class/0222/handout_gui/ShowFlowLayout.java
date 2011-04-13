@@ -7,7 +7,7 @@ public class ShowFlowLayout extends JFrame {
     // and vertical gap 20 between components
     setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
 
-	ImageIcon icon = new ImageIcon("LADYBUG1.GIF");
+    ImageIcon icon = new ImageIcon("LADYBUG1.GIF");
     // Add labels and text fields to the frame
     add(new JLabel("First Name", icon, SwingConstants.LEFT));
     add(new JTextField(8));
@@ -15,7 +15,7 @@ public class ShowFlowLayout extends JFrame {
     add(new JTextField(1));
     add(new JLabel("Last Name"));
     add(new JTextField(8));
-	add(new JButton(icon));
+    add(new JButton(icon));
   }
 
   /** Main method */

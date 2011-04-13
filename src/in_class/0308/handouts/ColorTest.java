@@ -16,9 +16,9 @@ public class ColorTest extends JFrame {
 
       choice = Integer.parseInt( input );
     
-    	setSize(250,250);
-    	setVisible(true);
-    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(250,250);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    }
 
    public void paint( Graphics g )
@@ -29,30 +29,30 @@ public class ColorTest extends JFrame {
       int red, green, blue;
            switch( choice ) {
             case 1:
-    				for ( int i = 0; i < 10; i++ )
-    				 g.drawLine( 20, 20, 250, 50 + i * 20 );
-    			break;
+                    for ( int i = 0; i < 10; i++ )
+                     g.drawLine( 20, 20, 250, 50 + i * 20 );
+                break;
             case 2:
-    			for ( int i = 0; i < 10; i++ ){
-    				red = (int) (Math.random() * 255);
-    				green = (int) (Math.random() * 255);
-    				blue = (int) (Math.random() * 255);
-    				Color mycolor = new Color(red, green, blue);
-    				g2d.setPaint(mycolor);
-    				g2d.fillRect( 10 + i * 10, 10 + i * 10,
+                for ( int i = 0; i < 10; i++ ){
+                    red = (int) (Math.random() * 255);
+                    green = (int) (Math.random() * 255);
+                    blue = (int) (Math.random() * 255);
+                    Color mycolor = new Color(red, green, blue);
+                    g2d.setPaint(mycolor);
+                    g2d.fillRect( 10 + i * 10, 10 + i * 10,
                            50 + i * 10, 50 + i * 10 );
-    			}
-    			break;
+                }
+                break;
             case 3:
-    			for ( int i = 0; i < 10; i++ ){
-    				red = (int) (Math.random() * 255);
-    				green = (int) (Math.random() * 255);
-    				blue = (int) (Math.random() * 255);
-    				Color mycolor = new Color(red, green, blue);
-    				g2d.setPaint(mycolor);
-    				g2d.fillOval( 10 + i * 10, 10 + i * 10,
+                for ( int i = 0; i < 10; i++ ){
+                    red = (int) (Math.random() * 255);
+                    green = (int) (Math.random() * 255);
+                    blue = (int) (Math.random() * 255);
+                    Color mycolor = new Color(red, green, blue);
+                    g2d.setPaint(mycolor);
+                    g2d.fillOval( 10 + i * 10, 10 + i * 10,
                            50 + i * 10, 50 + i * 10 );
-    			}
+                }
                break;
             default:
                mess = "Bad choice - " + choice;
@@ -63,8 +63,8 @@ public class ColorTest extends JFrame {
    } // end paint()
     public static void main (String args[])
     {
-    	ColorTest app = new ColorTest();
-    	
+        ColorTest app = new ColorTest();
+        
     } 
 
 } // end class ColorTest

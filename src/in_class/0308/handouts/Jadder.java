@@ -15,36 +15,36 @@ public class Jadder extends JFrame
 
     public Jadder()
     {
-    	super("Adder");
-    	// Set up an area to work on
-    	
-    	setLayout(new FlowLayout()); // One component after another from left to right
+        super("Adder");
+        // Set up an area to work on
+        
+        setLayout(new FlowLayout()); // One component after another from left to right
 
-    	// Now create some items to display to the user
+        // Now create some items to display to the user
 
-    	info = new JLabel("              Enter two numbers to add, then press the = button                        ");
-    	add(info);
-    	text1 = new JTextField(10);
-    	add(text1);
+        info = new JLabel("              Enter two numbers to add, then press the = button                        ");
+        add(info);
+        text1 = new JTextField(10);
+        add(text1);
 
-    	pluslabel = new JLabel("+");
-    	add(pluslabel);
+        pluslabel = new JLabel("+");
+        add(pluslabel);
     
-    	text2 = new JTextField(10);
-    	add(text2);
-    	
-    	button1 = new JButton("=");
-    	add(button1);
+        text2 = new JTextField(10);
+        add(text2);
+        
+        button1 = new JButton("=");
+        add(button1);
     
         // Subscribe for when the user clicks the button
     
-    	answertext = new JTextField(10);
-    	answertext.setEditable(false);
-    	add(answertext);
+        answertext = new JTextField(10);
+        answertext.setEditable(false);
+        add(answertext);
 
-    	setSize(350, 150);
-    	setVisible(true);
-    	
+        setSize(350, 150);
+        setVisible(true);
+        
     }
 
     // Listen for when the user presses the button
@@ -52,9 +52,9 @@ public class Jadder extends JFrame
 
     public static void main( String args[])
     {
-    	Jadder app = new Jadder();
+        Jadder app = new Jadder();
 
-    	app.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        app.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
     }
 
 
