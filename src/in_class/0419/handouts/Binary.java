@@ -8,12 +8,16 @@ public class Binary
     public static void main(String[] args) throws Exception
     {
         FileOutputStream efile = new FileOutputStream("binary.data");
-        DataOutputStream eout = new DataOutputStream(efile);
+        ObjectOutputStream eout = new ObjectOutputStream(efile);
+
+        Date now = new Date();
 
         eout.writeUTF("Barry Smith ");
         eout.writeDouble(50500.00);
+        eout.writeObject(now);
         eout.writeUTF("Lillie Smith ");
         eout.writeDouble(51500.00);
+        eout.writeObject(now);
 
         eout.close();
         

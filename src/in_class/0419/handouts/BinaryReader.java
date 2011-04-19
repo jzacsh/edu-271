@@ -8,19 +8,24 @@ public class BinaryReader
     public static void main(String[] args) throws Exception
     {
         FileInputStream efile = new FileInputStream("binary.data");
-        DataInputStream ein = new DataInputStream(efile);
-        String wholename;
+        ObjectInputStream ein = new ObjectInputStream(efile);
+        String wholename = "";
         double salary = 0;
         double total = 0;
+        Date then;
 
-        while (ein.available() != 0)
-        {
-            wholename = ein.readUTF();
-            salary = ein.readDouble();
-            total += salary;
+        try {
+            while (true)
+            {
+                wholename = ein.readUTF();
+                salary = ein.readDouble();
+                then = (Date) ein.readObject();
+                total += salary;
+            }
         }
+        catch (EOFException exp) { ; }
         
-        System.out.printf("Total for %s is %5.2f", wholename, total);
+        System.out.printf("Total for %s is %5.2f\n", wholename, total);
 
         ein.close();
         
