@@ -23,8 +23,8 @@ public class AccountWithoutSync {
   // A thread for adding a penny to the account
   private static class AddAPennyThread implements Runnable {
     public void run() {
-        
-      account.deposit(1); 
+
+      account.deposit(1);
     }
   }
 
@@ -36,7 +36,7 @@ public class AccountWithoutSync {
       return balance;
     }
 
-    public void deposit(int amount) { //  synchronized 
+    public void deposit(int amount) { //  synchronized
       int newBalance = balance + amount;
 
       // This delay is deliberately added to magnify the
