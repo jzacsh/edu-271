@@ -37,6 +37,12 @@ public myMenu()
   }
 
 // Do the Edit
+  for (int i=0; i < editItems.length; i++)
+  {
+     JMenuItem item = new JMenuItem(editItems[i]);
+     item.addActionListener(this);
+     emenu.add(item);
+  }
 
 
 // now do the sub menus
