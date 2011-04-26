@@ -7,7 +7,7 @@ public class AccountWithoutSync {
     ExecutorService executor = Executors.newCachedThreadPool();
 
     // Create and launch 100 threads
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 10000; i++) {
       executor.execute(new AddAPennyThread());
     }
 
@@ -22,6 +22,8 @@ public class AccountWithoutSync {
 
   // A thread for adding a penny to the account
   private static class AddAPennyThread implements Runnable {
+    //Runnable.run() is invoked by:
+    //ExecutorSevice.newCachedThreadPool().execute();
     public void run() {
 
       account.deposit(1);
@@ -36,7 +38,8 @@ public class AccountWithoutSync {
       return balance;
     }
 
-    public void deposit(int amount) { //  synchronized
+    //synchronized tells java to run this function with a basic semaphore.
+    public synchronized void deposit(int amount) { //  synchronized
       int newBalance = balance + amount;
 
       // This delay is deliberately added to magnify the
