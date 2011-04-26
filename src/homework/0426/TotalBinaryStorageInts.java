@@ -1,3 +1,4 @@
+import java.lang.Math;
 import java.util.*;
 import java.io.*;
 
@@ -9,41 +10,57 @@ import java.io.*;
 
 public class TotalBinaryStorageInts {
     private static String fileName = "Exercise18_3.dat";
+    private int correctTotal = 0;
 
-    public TotalBinaryStorageInts() {
+    //for debugging purposes
+    public TotalBinaryStorageInts() throws Exception {
         //write something to a file, for testing.
-        FileOutputStream outputFile = FileOutputStream(this.fileName);
-        ObjectOutputStream output = ObjectOutputStream(outputFile);
+        FileOutputStream outputFile = new FileOutputStream(this.fileName);
+        ObjectOutputStream output = new ObjectOutputStream(outputFile);
 
-        int randomQuantity = (int) (Math.random() * 100);
-        int secretTotal = 0;
-        System.out.printf("Writing %d numbers to file.\n", randomQuantity);
-        for (int i; i < randomQuantity; i++) {
-            output.writeInt(secretTotal += (int) (Math.random() * 1000));
+        int currentNum = 0,
+            randomQuantity = (int) (Math.random() * 100);
+
+        System.out.printf("Writing %d numbers to file...\n", randomQuantity);
+        for (int i = 0; i < randomQuantity; i++) {
+            currentNum = (int) (Math.random() * 1000);
+            correctTotal += currentNum;
+            output.writeInt(currentNum);
         }
-        System.out.printf("Total Quantity written to file: %d.\n", secretTotal);
+        System.out.printf("Total Quantity written to file:\t%d.\n", correctTotal);
 
         output.close();
     }
 
-    public static void main(String[] args) {
-        FileInputStream binaryNumbers = new FileInputStream(TotalBinaryStorageInts.fileName);
-        ObjectInputStream numbers = new ObjectInputStream(binaryNumbers);
-        int sum = 0;
+    public static void main(String[] args) throws Exception {
+        TotalBinaryStorageInts run = new TotalBinaryStorageInts();
 
         try {
-            int currentNumber = 0;
-            while (true) {
-                currentNumber = numbers.readInt();
-                sum += currentNumber;
+            FileInputStream binaryNumbers = new FileInputStream(TotalBinaryStorageInts.fileName);
+            ObjectInputStream numbers = new ObjectInputStream(binaryNumbers);
+            int sum = 0;
+
+            try {
+                int currentNumber = 0;
+                while (true) {
+                    currentNumber = numbers.readInt();
+                    sum += currentNumber;
+                }
+            }
+            catch (EOFException ex) { 
+                System.out.printf("Total found in file was:\t%d.\n", sum);
+                if (sum != correctTotal) {
+                    System.err.printf("Fail. Incorrect total found. Should've been:\t%d.\n",
+                            correctTotal);
+                }
+            }
+            finally {
+                numbers.close();
             }
         }
-        catch (EOFException exp) { 
-            System.out.printf("total found in file = %d\n", sum);
+        catch(Exception err) {
+            System.err.printf("problem initializing file and/or object.\n");
+            return;
         }
-        finally {
-            numbers.close();
-        }
-
     }
 }
