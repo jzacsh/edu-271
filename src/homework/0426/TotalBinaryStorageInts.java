@@ -49,9 +49,9 @@ public class TotalBinaryStorageInts {
             }
             catch (EOFException ex) { 
                 System.out.printf("Total found in file was:\t%d.\n", sum);
-                if (sum != correctTotal) {
-                    System.err.printf("Fail. Incorrect total found. Should've been:\t%d.\n",
-                            correctTotal);
+                if (sum != run.correctTotal) {
+                    System.err.printf("Fail! Incorrect total found. Should've been:\t%d.\n",
+                            run.correctTotal);
                 }
             }
             finally {
