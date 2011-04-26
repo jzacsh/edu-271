@@ -13,13 +13,13 @@ import java.awt.event.*;
 
 public class myMenu extends JMenuBar implements ActionListener
 {
-  
+
  String fileItems[] = { "New", "Open", "Save", "Exit"};
  char[] fileShortcuts = { 'N', 'O', 'S', 'X'};
-                               
+
  String editItems[] = {"Undo", "Cut", "Copy", "Paste"};
- 
- 
+
+
 public myMenu()
 {
   JMenu fmenu = new JMenu("File");
@@ -37,7 +37,7 @@ public myMenu()
   }
 
 // Do the Edit
-  
+
 
 // now do the sub menus
 // these must be done before adding the other menu to the menubar
@@ -59,7 +59,7 @@ public myMenu()
   ButtonGroup bgroup = new ButtonGroup();
   omenu.add(item = new JRadioButtonMenuItem("Radio 1"));
   item.addActionListener(this);
-  
+
   bgroup.add(item);
   omenu.add(item = new JRadioButtonMenuItem("Radio 2"));
   item.addActionListener(this);
@@ -74,30 +74,30 @@ public myMenu()
   add(fmenu);
   add(emenu);
   add(omenu);
-          
+
 }
   public static void main(String args[])
   {
-    
+
     JFrame f = new JFrame("Menu application");
 
     f.setJMenuBar(new myMenu());
     f.setSize(250,200);
     f.setVisible(true);
-     
+
     f.addWindowListener(
        new WindowAdapter(){
           public void windowClosing(WindowEvent e)
           {
              System.exit(0);
           }
-       } ); 
+       } );
    }
-      
+
     public void actionPerformed(ActionEvent e)
-    { 
+    {
       // Tell us what was selected
       System.out.println("Menu item " + e.getActionCommand() + " was pressed");
     }
- 
+
 }
