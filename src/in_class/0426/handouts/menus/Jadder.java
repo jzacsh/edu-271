@@ -11,12 +11,12 @@ public class Jadder extends JFrame
     JTextField text1, text2, answertext;
     JLabel pluslabel, info;
     JButton button1;
-    
+
     public Jadder()
     {
         super("Adder");
-        
-        
+
+
         setLayout(new FlowLayout()); // One component after another from left to right
 
         // Now create some items to display to the user
@@ -28,26 +28,26 @@ public class Jadder extends JFrame
 
         pluslabel = new JLabel("+");
         add(pluslabel);
-    
+
         text2 = new JTextField(10);
         add(text2);
-        
+
         button1 = new JButton("=");
         add(button1);
-    
+
         // Subscribe for when the user clicks the button
-    
+
         answertext = new JTextField(10);
         answertext.setEditable(false);
         add(answertext);
 
         setSize(350, 150);
         setVisible(true);
-        
+
     }
 
     // Listen for when the user presses the button
-    
+
 
     public static void main( String args[])
     {

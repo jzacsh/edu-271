@@ -10,29 +10,29 @@ public class ProgressBarDemo extends JApplet {
   private JTextArea jtaResult = new JTextArea();
   private JTextField jtfPrimeCount = new JTextField(8);
   private JButton jbtDisplayPrime = new JButton("Display Prime");
-  
-  public ProgressBarDemo() {   
+
+  public ProgressBarDemo() {
     jpb.setStringPainted(true); // Paint the percent in a string
     jpb.setValue(0);
     jpb.setMaximum(100);
-    
+
     jtaResult.setWrapStyleWord(true);
     jtaResult.setLineWrap(true);
-    
+
     JPanel panel = new JPanel();
     panel.add(new JLabel("Enter the prime number count"));
     panel.add(jtfPrimeCount);
     panel.add(jbtDisplayPrime);
-    
+
     add(jpb, BorderLayout.NORTH);
     add(new JScrollPane(jtaResult), BorderLayout.CENTER);
     add(panel, BorderLayout.SOUTH);
-    
+
     jbtDisplayPrime.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {      
+      public void actionPerformed(ActionEvent e) {
         ComputePrime task = new ComputePrime(
           Integer.parseInt(jtfPrimeCount.getText()), jtaResult);
-                
+
         task.addPropertyChangeListener(new PropertyChangeListener() {
           public void propertyChange(PropertyChangeEvent e) {
             if ("progress".equals(e.getPropertyName())) {
@@ -40,38 +40,38 @@ public class ProgressBarDemo extends JApplet {
             }
           }
         });
-        
+
         task.execute(); // Execute SwingWorker
       }
     });
   }
-  
+
   /** Task class for SwingWorker */
   static class ComputePrime extends SwingWorker<Integer, Integer> {
-    private int count; 
+    private int count;
     private JTextArea result; // Textarea in the UI
-    
+
     /** Construct a runnable Task */
     public ComputePrime(int count, JTextArea result) {
       this.count = count;
       this.result = result;
     }
-    
+
     /** Code run on a background thread */
     protected Integer doInBackground() {
       publishPrimeNumbers(count);
-      
+
       return 0; // doInBackground must return a value
     }
 
     /** Override process to display published prime values */
     protected void process(java.util.List<Integer> list) {
-      for (int i = 0; i < list.size(); i++) 
+      for (int i = 0; i < list.size(); i++)
         result.append(list.get(i) + " ");
     }
-    
+
     /** Publish the first n primes number */
-    private void publishPrimeNumbers(int n) {    
+    private void publishPrimeNumbers(int n) {
       int count = 0; // Count the number of prime numbers
       int number = 2; // A number to be tested for primeness
 

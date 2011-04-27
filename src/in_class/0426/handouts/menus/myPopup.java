@@ -15,9 +15,9 @@ public class myPopup extends JPanel implements ActionListener,
                                                PopupMenuListener,
                                                MouseListener
 {
-   
+
  public JPopupMenu popup;
-  
+
  public myPopup()
  {
   popup = new JPopupMenu();
@@ -32,33 +32,33 @@ public class myPopup extends JPanel implements ActionListener,
   popup.add(item = new JMenuItem("Right"));
   item.addActionListener(this);
 
-  
+
   popup.addPopupMenuListener(this);
 
   addMouseListener(this);
 
-          
+
  }
   public static void main(String args[])
   {
-    
+
     JFrame f = new JFrame("Popup application");
 
     f.setContentPane(new myPopup());
     f.setSize(250,200);
     f.setVisible(true);
-     
+
     f.addWindowListener(
        new WindowAdapter(){
           public void windowClosing(WindowEvent e)
           {
              System.exit(0);
           }
-       } ); 
+       } );
    }
-        
+
     public void actionPerformed(ActionEvent e)
-    { 
+    {
       System.out.println("Popup item " + e.getActionCommand() + " was pressed");
     }
 
@@ -84,7 +84,7 @@ public class myPopup extends JPanel implements ActionListener,
     {
        System.out.println("Now you do not see it");
     }
-    
+
     public void popupMenuCanceled(PopupMenuEvent e)
     {
        ;
