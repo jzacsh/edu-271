@@ -7,13 +7,13 @@ program with Exercise 16.23 by setting the delay time to 10 in both programs.
 Which one runs animation faster?
 
 
-[1] Exercise 16.23
+:[1] Exercise 16.23 [3]
 (Raising flag and playing the anthem)
 Create an applet that displays a flag rising up as shown in Figure 14.20 [2].
 As the national flag rises, play the national anthem. (you may use a flag image
 and anthem audio file from Listing 16.13 [3]).
 
-[2]
+:[2]
 Figure 14.20
   A flag is rising upward
 
@@ -28,6 +28,6 @@ Figure 14.20
 | +-----+               | |                       | |                       |
 +-----------------------+ +-----------------------+ +-----------------------+
 
-[3]
+:[3]
     Listing 16.13 is attached as ./ImageAudioAnimation.java
     per Professor, use ./Exercise17_23.java, instead
