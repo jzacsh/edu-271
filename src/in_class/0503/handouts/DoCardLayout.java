@@ -70,7 +70,7 @@ public class DoCardLayout extends JApplet
           {
              System.exit(0);
           }
-       } ); 
+       } );
   }
 
   public void actionPerformed(ActionEvent e)
@@ -98,4 +98,4 @@ public class DoCardLayout extends JApplet
       //show the component at specified index
       queue.show(cPanel, (String)e.getItem());
   }
-} 
+}
