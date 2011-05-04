@@ -36,7 +36,7 @@ public class DoCardLayout extends JApplet
       choComponent.addItem(String.valueOf(i));
 
     //place panels in the frame
-	Container c = getContentPane();
+    Container c = getContentPane();
     c.setLayout(new BorderLayout());
     c.add("Center", cPanel);
     c.add("South", btPanel);
