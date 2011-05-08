@@ -8,7 +8,7 @@ public class Exercise17_23 extends JApplet {
   public Exercise17_23() {
     URL imageURL = this.getClass().getResource("uk.gif");
     Image image = new ImageIcon(imageURL).getImage();
-    add(new FlagAnthemPanel(image));
+    this.add(new FlagAnthemPanel(image));
   }
 
   public static class FlagAnthemPanel extends JPanel implements ActionListener {
@@ -38,7 +38,7 @@ public class Exercise17_23 extends JApplet {
     }
 
     public void actionPerformed(ActionEvent e) {
-      repaint();
+      this.repaint();
     }
   }
 
