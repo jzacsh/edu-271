@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.applet.*;
 import java.net.*;
+import java.io.*; //for Thread class
 
 public class Exercise17_23 extends JApplet {
   public Exercise17_23() {
