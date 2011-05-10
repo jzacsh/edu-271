@@ -17,8 +17,7 @@ public class Threadex1 {
 class CountDownEven extends Thread {
     public void run() {
         int k;
-        for (k = 10; k > 0 ; k -= 2 )
-        {
+        for (k = 10; k > 0 ; k -= 2 ) {
             System.out.println(this.getName() + " count " + k);
             Thread.yield();
         }
@@ -28,8 +27,7 @@ class CountDownEven extends Thread {
 class CountDownOdd extends Thread {
     public void run() {
         int k;
-        for (k = 9; k > 0 ; k -= 2 )
-        {
+        for (k = 9; k > 0 ; k -= 2 ) {
             System.out.println(this.getName() + " count " + k);
             Thread.yield();
         }

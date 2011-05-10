@@ -17,16 +17,12 @@ class CountDownEven implements Runnable {
     public void run() {
         Thread t = Thread.currentThread();
         int k;
-        for (k = 10; k > 0 ; k -= 2 )
-        {
+        for (k = 10; k > 0 ; k -= 2 ) {
             System.out.println(t.getName() + " count " + k);
-            try
-            {
+            try {
                 Thread.sleep(500);
             }
-            catch (InterruptedException ex)
-            {
-            }
+            catch (InterruptedException ex) { }
 
         }
     }
@@ -36,16 +32,12 @@ class CountDownOdd implements Runnable {
     public void run() {
         Thread t = Thread.currentThread();
         int k;
-        for (k = 9; k > 0 ; k -= 2 )
-        {
+        for (k = 9; k > 0 ; k -= 2 ) {
             System.out.println(t.getName() + " count " + k);
-            try
-            {
+            try {
                 Thread.sleep(5000);
             }
-            catch (InterruptedException ex)
-            {
-            }
+            catch (InterruptedException ex) { }
         }
     }
 }

@@ -17,8 +17,7 @@ class CountDownEven implements Runnable {
     public void run() {
         Thread t = Thread.currentThread();
         int k;
-        for (k = 10; k > 0 ; k -= 2 )
-        {
+        for (k = 10; k > 0 ; k -= 2 ) {
             System.out.println(t.getName() + " count " + k);
             Thread.yield();
         }
@@ -29,8 +28,7 @@ class CountDownOdd implements Runnable {
     public void run() {
         Thread t = Thread.currentThread();
         int k;
-        for (k = 9; k > 0 ; k -= 2 )
-        {
+        for (k = 9; k > 0 ; k -= 2 ) {
             System.out.println(t.getName() + " count " + k);
             Thread.yield();
         }
