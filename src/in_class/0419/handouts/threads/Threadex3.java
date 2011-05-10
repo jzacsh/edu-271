@@ -3,15 +3,15 @@ import java.util.*;
 import java.io.*;
 
 
-public class Threadex3 
+public class Threadex3
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         Thread count1 = new Thread (new CountDownEven());
         Thread count2 = new Thread (new CountDownOdd());
         count1.start();
         count2.start();
-        
+
     }
 }
 class CountDownEven implements Runnable
@@ -30,7 +30,7 @@ class CountDownEven implements Runnable
             catch (InterruptedException ex)
             {
             }
-            
+
         }
     }
 }
