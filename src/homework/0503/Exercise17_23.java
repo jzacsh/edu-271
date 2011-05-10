@@ -19,13 +19,30 @@ public class Exercise17_23 extends JApplet {
     int y = 150;
 
     public FlagAnthemPanel(Image image) {
-      this.image = image;
-      timer.start();
+        this.image = image;
+        Thread t = new FlagAnthemPanelAnimate();
+        t.start();
+        URL audioURL = this.getClass().getResource("uk.mid");
+        AudioClip audioClip = Applet.newAudioClip(audioURL);
+        audioClip.play();
+    }
 
-      URL audioURL = this.getClass().getResource("uk.mid");
-      AudioClip audioClip = Applet.newAudioClip(audioURL);
-      audioClip.play();
-
+    class FlagAnthemPanelAnimate implements Runnable {
+        void run() {
+            Thread t = Thread.currentThread();
+            public static int stripes = 0;
+            while (true) {
+                if ((stripes % 2) == 0) {
+                    this.repaint();
+                }
+                else {
+                    try {
+                        Thread.sleep(5000);
+                    }
+                    catch (InterruptedException ex) { }
+                }
+            }
+        }
     }
 
     public void paintComponent(Graphics g) {
@@ -38,9 +55,6 @@ public class Exercise17_23 extends JApplet {
       g.drawImage(image, x, y, 60, 40, this);
     }
 
-    public void actionPerformed(ActionEvent e) {
-      this.repaint();
-    }
   }
 
   public static void main(String[] args) {
