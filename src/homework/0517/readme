@@ -1,2 +1,12 @@
 lab 14
 pg 571, #16.15
+
+Enlarging and shrinking an image
+Write an applet that will display a sequence of images from a single image file
+in different sizes. Initially, the viewing area for this image has a width of
+300px and height of 300px. Your program should continuously shrink the viewing
+area by 1 in width and 1 in height until it reaches a width of 50px and a
+height of 50px. At that point, the viewing area should continuously enlarge by
+1 in width and 1 in height until it reaches a width of 300px and height of
+300px. The viewing area should shrink and enlarge (alternately) to create
+animation for the single image. Enable the applet ot run standalone.
