@@ -15,6 +15,7 @@ public class Exercise17_23 extends JApplet {
   public static class FlagAnthemPanel extends JPanel {
     private Image image;
     int x = 20, y = 150;
+//  private FlagAnthemPanel that;
 
     public FlagAnthemPanel(Image image) {
         this.image = image;
@@ -23,6 +24,7 @@ public class Exercise17_23 extends JApplet {
         URL audioURL = this.getClass().getResource("uk.mid");
         AudioClip audioClip = Applet.newAudioClip(audioURL);
         audioClip.play();
+//      this.that = this;
     }
 
     class FlagAnthemPanelAnimate implements Runnable {
@@ -31,6 +33,7 @@ public class Exercise17_23 extends JApplet {
             int stripes = 0;
             while (true) {
                 repaint(); //@TODO: repaint method of _WHICH_ class, if not `this`???
+             // that.repaint(); //@TODO: why not!?
                 try {
                     Thread.sleep(500);
                 }
