@@ -12,15 +12,13 @@ public class Exercise17_23 extends JApplet {
     this.add(new FlagAnthemPanel(image));
   }
 
-  public static class FlagAnthemPanel extends JPanel implements ActionListener {
+  public static class FlagAnthemPanel extends JPanel {
     private Image image;
-    private Timer timer = new Timer(400, this);
-    int x = 20;
-    int y = 150;
+    int x = 20, y = 150;
 
     public FlagAnthemPanel(Image image) {
         this.image = image;
-        Thread t = new FlagAnthemPanelAnimate();
+        Thread t = new Thread(new FlagAnthemPanelAnimate());
         t.start();
         URL audioURL = this.getClass().getResource("uk.mid");
         AudioClip audioClip = Applet.newAudioClip(audioURL);
@@ -28,19 +26,15 @@ public class Exercise17_23 extends JApplet {
     }
 
     class FlagAnthemPanelAnimate implements Runnable {
-        void run() {
+        public void run() {
             Thread t = Thread.currentThread();
-            public static int stripes = 0;
+            int stripes = 0;
             while (true) {
-                if ((stripes % 2) == 0) {
-                    this.repaint();
+                repaint(); //@TODO: repaint method of _WHICH_ class, if not `this`???
+                try {
+                    Thread.sleep(500);
                 }
-                else {
-                    try {
-                        Thread.sleep(5000);
-                    }
-                    catch (InterruptedException ex) { }
-                }
+                catch (InterruptedException ex) { }
             }
         }
     }
