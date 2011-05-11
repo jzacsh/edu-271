@@ -13,14 +13,15 @@ public class FutureValue extends JFrame implements ActionListener {
     protected JLabel lb_rate;
     protected JLabel lb_future;
     //set the text fields
-    protected JLabel tf_investment;
-    protected JLabel tf_years;
-    protected JLabel tf_rate;
-    protected JLabel tf_future;
+    protected JTextField tf_investment;
+    protected JTextField tf_years;
+    protected JTextField tf_rate;
+    protected JTextField tf_future;
     //set the main "submit" button
     protected JButton calculate;
 
     public FutureValue() {
+        super("Exercise29_1 - Future Investment Value");
         this.setLayout(new FlowLayout());
 
         //create the lables
@@ -55,8 +56,12 @@ public class FutureValue extends JFrame implements ActionListener {
 
         //add main "submit" button
         this.calculate = new JButton("CALCULATE");
-        this.calculate.setActionListener(this);
+        this.calculate.addActionListener(this);
         this.add(calculate);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        System.out.printf("Gah %s\n", e.getActionCommand());
     }
 
     class FutureValueMenu extends JMenuBar implements ActionListener {
@@ -88,13 +93,14 @@ public class FutureValue extends JFrame implements ActionListener {
             this.add(menu_file);
             this.add(menu_about);
         }
-        
-        public void actionPerformed() {
+
+        public void actionPerformed(ActionEvent e) {
+            System.out.printf("Menu item %s was pressed\n", e.getActionCommand());
         }
     }
 
     public static void main(String[] args) {
-        JFrame f = new FutureValue("Exercise29_1 - Future Investment Value");
+        JFrame f = new FutureValue();
         f.setMenuBar(new FutureValueMenu());
         f.setSize(600, 300);
         f.setVisible(true);
