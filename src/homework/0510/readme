@@ -1,2 +1,35 @@
 lab 13
 pg 1003, #29.1
+
+Creating an investment value calculator
+Write a program that calculates the future value of an investment at a given
+interest rate for a specified number of years. The formula for the calculation
+is as follows:
+
+    futureValue = investmentAmount * ((1 + monthlyInterestRate) ^ (years * 12))
+
+Use a text fields for interest rate, investment amount, and years. Display the
+future amount in a text field when the user clicks the Calculate button or
+chooses Calculate from the Operation menu (see Figure 29.24 [1]). Show a
+message dialog box when the user clicks the About menu item from the Help menu.
+
+:[1] Figure 29.24
+The user enters the investment amount, years, and interst rate to compute
+future value.
+
++--------------------------------------------+    +--------------------------------------------+
+| Exercise29_1                       _  O X  |    | Exercise29_1                       _  O X  |
++--------------------------------------------+    +--------------------------------------------+
+|  Operation   Help                          |    | [Operation]_ Help                          |
+|--------------------------------------------|    |-|           |------------------------------|
+|                                            |    | |[Calculate]|                              |
+| Investment Amount        [ 10000        ]  |    | | Exit      |ount        [ 10000        ]  |
+| Years                    [ 1            ]  |    | |___________|            [ 1            ]  |
+| Annual Interest Rate     [ 6.75         ]  |    | Annual Interest Rate     [ 6.75         ]  |
+| Future value             [ $ 10,696.28  ]  |    | Future value             [ $ 10,696.28  ]  |
+|                                            |    |                                            |
+| +----------------------------------------+ |    | +----------------------------------------+ |
+| |               CALCULATE                | |    | |               CALCULATE                | |
+| +----------------------------------------+ |    | +----------------------------------------+ |
+|                                            |    |                                            |
++--------------------------------------------+    +--------------------------------------------+
